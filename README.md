@@ -4,7 +4,7 @@
 1. git clone https://github.com/Lovelykira/FinalProject.git<br>
 2. cd FinalProject/SearchPicsDjango<br>
 3. virtualenv -p python3.5 .env<br>
-4. pip install requirements.txt<br>
+4. pip install -r requirements.txt<br>
 5. cd SearchPicsDjango<br>
 6. crсоздать local_settings.py с настройками базы данных следующего содержания:<br>
 DATABASES = {<br>
@@ -21,10 +21,10 @@ DATABASES = {<br>
 8. python manage.py migrate<br>
 9. cd ../SearchPicsScrapy<br>
 10. virtualenv -p python2 .env<br>
-11. pip install requirements.txt<br>
+11. pip install -r requirements.txt<br>
 12. cd ../SearchPicsWebserver<br>
 13. virtualenv -p python3.5 .env<br>
-14. pip install requirements.txt<br>
+14. pip install -r requirements.txt<br>
 15. cd ..<br>
 16. easy_install supervisor<br>
 17. supervisord -c supervisord.conf<br>
