@@ -1,0 +1,30 @@
+DEBUG (0.028) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+DEBUG (0.012) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+DEBUG (0.116) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb' AND "django_session"."expire_date" > '2016-09-06T20:49:52.864625+00:00'::timestamptz); args=('y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb', datetime.datetime(2016, 9, 6, 20, 49, 52, 864625, tzinfo=<UTC>))
+DEBUG (0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" = 1 AND "main_tasks"."status" = 'FINISHED'); args=(1, 'FINISHED')
+INFO "GET / HTTP/1.1" 200 2058
+INFO "GET /static/web-client.js HTTP/1.1" 304 0
+DEBUG (0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb' AND "django_session"."expire_date" > '2016-09-06T20:49:58.891783+00:00'::timestamptz); args=('y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb', datetime.datetime(2016, 9, 6, 20, 49, 58, 891783, tzinfo=<UTC>))
+DEBUG (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" = 1 AND "main_tasks"."status" = 'FINISHED'); args=(1, 'FINISHED')
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" = 1 AND "main_tasks"."keyword" = 'dog'); args=(1, 'dog')
+DEBUG (0.032) INSERT INTO "main_tasks" ("status", "keyword", "date", "user_id") VALUES ('IN_PROGRESS', 'dog', '2016-09-06'::date, 1) RETURNING "main_tasks"."id"; args=('IN_PROGRESS', 'dog', datetime.date(2016, 9, 6), 1)
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex google instagram', "keyword" = 'dog', "date" = '2016-09-06'::date, "user_id" = 1 WHERE "main_tasks"."id" = 326; args=('IN_PROGRESS yandex google instagram', 'dog', datetime.date(2016, 9, 6), 1, 326)
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" = 1 AND "main_tasks"."status" = 'FINISHED'); args=(1, 'FINISHED')
+INFO "POST / HTTP/1.1" 200 2058
+INFO "GET /search/dog HTTP/1.1" 301 0
+DEBUG (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb' AND "django_session"."expire_date" > '2016-09-06T20:50:10.964229+00:00'::timestamptz); args=('y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb', datetime.datetime(2016, 9, 6, 20, 50, 10, 964229, tzinfo=<UTC>))
+DEBUG (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG (0.018) SELECT "main_results"."id", "main_results"."task_id", "main_results"."link", "main_results"."img", "main_results"."rank", "main_results"."site" FROM "main_results" WHERE "main_results"."task_id" = (SELECT U0."id" FROM "main_tasks" U0 WHERE (U0."user_id" = 1 AND U0."keyword" = 'dog')); args=(1, 'dog')
+INFO "GET /search/dog/ HTTP/1.1" 200 15826
+DEBUG (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb' AND "django_session"."expire_date" > '2016-09-06T20:50:16.939339+00:00'::timestamptz); args=('y2pxlgqe5ve6dpnua1yxdqi0r7n1d1sb', datetime.datetime(2016, 9, 6, 20, 50, 16, 939339, tzinfo=<UTC>))
+DEBUG (0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" = 1 AND "main_tasks"."status" = 'FINISHED'); args=(1, 'FINISHED')
+INFO "GET / HTTP/1.1" 200 2139

@@ -1,0 +1,59 @@
+.container{
+    width = 600px;
+    text-align:center;
+    padding: 50px;
+}
+
+.pic-container{
+    float:right;
+    display:inline-block;
+    width:210px;
+    height:160px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+img {
+    vertical-align: middle;
+    max-height: 150px;
+    max-width: 200px;
+}
+
+.search, .btn{
+    padding: 10px;
+    border: 1px groove;
+    display: inline-block;
+}
+
+.btn{
+    background-color:#4CAF50
+}
+
+.progress{
+display:inline-block;
+width: 80%;
+vertical-align: middle;
+}
+
+#.task{
+#vertical-align: middle;
+#display:inline-block;
+#}
+
+.task_name{
+text-align: middle;
+}
+
+.tasks2-container{
+margin: 30px 0 0 0;
+}
+
+a.new_task::after {
+content: '\00a0';
+}

@@ -1,0 +1,26 @@
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:46748
+INFO:root:Client user id: 1
+INFO:root:user messages: {'1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46760
+INFO:root:Client user id: 1
+INFO:root:user messages: {'1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"search_phrase": "dog", "user_id": 1}' on channel 'our-channel'
+INFO:root:user_id: 1 value: "'dog'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'dog'"]
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46826
+INFO:root:Client user id: -1
+INFO:root:user messages: {'1': [], '-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46832
+INFO:root:Client user id: 1
+INFO:root:user messages: {'1': [], '-1': []}
+INFO:root:WebSocket connection open.
