@@ -2,7 +2,7 @@
 
 Инструкция:<br>
 1. git clone https://github.com/Lovelykira/FinalProject.git<br>
-2. cd SearchPicsDjango<br>
+2. cd FinalProject/SearchPicsDjango<br>
 3. virtualenv -p python3 .env<br>
 4. pip install requirements.txt<br>
 5. cd SearchPicsDjango<br>
