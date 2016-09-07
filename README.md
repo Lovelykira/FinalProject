@@ -25,7 +25,7 @@ DATABASES = {<br>
 12. virtualenv -p python3.5 .env<br>
 13. pip install -r requirements.txt<br>
 14. cd ../supervisord<br>
-15. mkdir log
-16. cd ..
+15. mkdir log<br>
+16. cd ..<br>
 17. sudo apt-get install supervisor<br>
 18. supervisord -c supervisord.conf<br>
