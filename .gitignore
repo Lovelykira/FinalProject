@@ -1,0 +1,8 @@
+/.idea
+/**/*.pyc
+/**/__pycache__
+/**/.env
+/**/*.log
+/**/*.pid
+/**/local_settings.py
+/**/dump.rdb

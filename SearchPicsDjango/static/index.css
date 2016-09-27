@@ -41,19 +41,19 @@ width: 80%;
 vertical-align: middle;
 }
 
-#.task{
-#vertical-align: middle;
-#display:inline-block;
-#}
+a.task::after {
+content: '\00a0';
+}
+
 
 .task_name{
-text-align: middle;
+text-align:center;
+overflow-x: hidden;
+vertical-align: center;
 }
 
-.tasks2-container{
-margin: 30px 0 0 0;
-}
-
-a.new_task::after {
-content: '\00a0';
+.row{
+display:flex;
+justify-content:center;
+align-items:center;
 }

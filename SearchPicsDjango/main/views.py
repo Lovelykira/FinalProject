@@ -3,6 +3,8 @@ from django.views.generic import TemplateView, View, FormView
 from django.http import HttpResponse,JsonResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 from datetime import datetime, timedelta
 import re
@@ -15,7 +17,8 @@ from .models import Results, Tasks
 from .forms import LoginForm, RegistrationForm
 
 SPIDERS = ['google', 'yandex', 'instagram']
-START_STATUS = "IN_PROGRESS yandex google instagram"
+#START_STATUS = "IN_PROGRESS yandex google instagram"
+START_STATUS = "IN_PROGRESS"
 FINISHED = "FINISHED"
 
 
@@ -39,12 +42,13 @@ class SearchView(TemplateView):
         Gets all results for current user by his search phrase and sorts them by id.
         """
         if request.user.is_authenticated():
-            task = Tasks.objects.filter(keyword=kwargs['phrase'], user=request.user)
+            tasks = Tasks.objects.filter(keyword=kwargs['phrase'], user=request.user)
         else:
-            task = Tasks.objects.filter(keyword=kwargs['phrase'], user=None)
-        pics = Results.objects.filter(task=task)
+            tasks = Tasks.objects.filter(keyword=kwargs['phrase'], user=None)
+        pics = Results.objects.filter(task__in=tasks)
         pics = sorted(pics, key=byRank)
         return render(request, 'search.html', {'pics':pics})
+
 
 
 class MainView(TemplateView):
@@ -52,6 +56,10 @@ class MainView(TemplateView):
     Class MainView.
     """
     template_name = "index.html"
+
+    @method_decorator(csrf_exempt)
+    def dispatch(self, request, *args, **kwargs):
+        return super(MainView, self).dispatch(request, *args, **kwargs)
 
     def spiders_search(self, value):
         """
@@ -73,8 +81,11 @@ class MainView(TemplateView):
         @return: tasks, sorted by id.
         """
        # tasks = Tasks.objects.filter(user=user, status=FINISHED)
-        tasks = Tasks.objects.filter(user=user, status=FINISHED)
-        return reversed(sorted(tasks, key=byID, reverse=True)[:10])
+        tasks = Tasks.objects.order_by('keyword', '-id').distinct('keyword').values_list('id', flat=True)
+        print(tasks.query)
+        tasks = Tasks.objects.filter(pk__in=tasks).filter(user=user, status=FINISHED)
+        print(tasks.query)
+        return tasks[len(tasks)-10:]
 
     def save_task(self, task, value):
         """
@@ -96,7 +107,7 @@ class MainView(TemplateView):
         """
         q = re.compile(r'[^a-zA-Z0-9_ ]')
         res = q.sub('', value)
-        return res.rstrip()
+        return res.strip()
 
     def post(self, request, *args, **kwargs):
         """
@@ -107,6 +118,7 @@ class MainView(TemplateView):
         The database saves history of researches only for registered users.
         The functions gets separately all 'finished' and 'in progress' tasks and transfer them into context.
         """
+        print(request.POST)
         if request.user.is_authenticated():
             user = request.user
             user_pk = request.user.pk
@@ -117,10 +129,14 @@ class MainView(TemplateView):
         finished_tasks = self.get_finished_tasks(user)
         if value == "":
             return render(request, 'index.html', {'tasks': finished_tasks})
-        task, created = Tasks.objects.get_or_create(keyword=value, user=user)
+        task_google, created = Tasks.objects.get_or_create(keyword=value, user=user, site="google")
+        task_yandex, created = Tasks.objects.get_or_create(keyword=value, user=user, site="yandex")
+        task_instagram, created = Tasks.objects.get_or_create(keyword=value, user=user, site="instagram")
         one_day = timedelta(days=1)
-        if created or task.date + one_day < datetime.date(datetime.now()):
-            self.save_task(task, value)
+        if created or task_google.date + one_day < datetime.date(datetime.now()):
+            self.save_task(task_google, value)
+            self.save_task(task_yandex, value)
+            self.save_task(task_instagram, value)
             value = json.dumps({'value': value, 'user':user_pk})
             self.spiders_search(value)
 

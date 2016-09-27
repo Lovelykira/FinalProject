@@ -21,7 +21,7 @@ class MyServerProtocol(WebSocketServerProtocol):
         self.user_id = request.params['user_id'][0]
         logging.info("Client user id: {0}".format(self.user_id))
         global user_messages
-        user_messages[str(self.user_id)] = []
+        user_messages[str(self.user_id)] = self
         logging.info("user messages: {0}".format(user_messages))
 
 
@@ -34,18 +34,18 @@ class MyServerProtocol(WebSocketServerProtocol):
         """
         logging.info("WebSocket connection open.")
 
-        def send():
-            global messages
-            while len(user_messages[self.user_id]):
-                if not self.connection_is_open:
-                    return
-                #result_mes = {'phrase_info':user_messages[self.user_id][0]}
-                self.sendMessage(json.dumps(user_messages[self.user_id][0]).encode('utf8'))
-                user_messages[self.user_id] = user_messages[self.user_id][1:]
-                logging.info('Sent message to client')
-            self.factory.loop.call_later(5, send)
-
-        send()
+        # def send():
+        #     global messages
+        #     while len(user_messages[self.user_id]):
+        #         if not self.connection_is_open:
+        #             return
+        #         #result_mes = {'phrase_info':user_messages[self.user_id][0]}
+        #         self.sendMessage(json.dumps(user_messages[self.user_id][0]).encode('utf8'))
+        #         user_messages[self.user_id] = user_messages[self.user_id][1:]
+        #         logging.info('Sent message to client')
+        #     self.factory.loop.call_later(5, send)
+        #
+        # send()
 
     def onClose(self, wasClean, code, reason):
         logging.info("WebSocket connection closed: {0}".format(reason))
@@ -90,12 +90,13 @@ def main():
             reply = json.loads(reply.value)
             user_id = str(reply['user_id'])
             value = repr(reply['search_phrase'])
-            num_spiders = repr(reply['num_spiders'])
             logging.info('user_id: {} value: {}'.format(str(user_id), repr(value)))
             logging.info('type [user_id]: {}'.format(type(user_id)))
 
-            res_message = {'search_phrase':value, 'num_spiders':num_spiders}
-            user_messages[user_id].append(res_message)
+            res_message = {'search_phrase':value}
+            user_messages[user_id].sendMessage(json.dumps(res_message).encode('utf8'))
+            logging.info('Sent message to client')
+           # user_messages[user_id].append(res_message)
             logging.info('user_messages[user_id]: {}'.format(user_messages[user_id]))
 
         # When finished, close the connection.

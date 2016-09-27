@@ -29,7 +29,7 @@ class DBWriterPipeline(object):
     def __init__(self):
         self.items_processed={'google':0,'yandex':0,'instagram':0}
 
-    def get_task(self, keyword, user_id):
+    def get_task(self, keyword, user_id, spider_name):
         """
         The method that returns Task object for current user and search phrase.
 
@@ -38,9 +38,9 @@ class DBWriterPipeline(object):
         @return: Task object.
         """
         if user_id != -1:
-            task = TasksItem.django_model.objects.get(keyword=keyword, user_id=user_id)
+            task = TasksItem.django_model.objects.get(keyword=keyword, user_id=user_id, site=spider_name)
         else:
-            task = TasksItem.django_model.objects.get(keyword=keyword, user=None)
+            task = TasksItem.django_model.objects.get(keyword=keyword, user=None, site=spider_name)
         return task
 
     def save_result(self, item, spider, task):
@@ -57,7 +57,6 @@ class DBWriterPipeline(object):
             result['link'] = link
             result['img'] = img
             result['rank'] = self.items_processed[spider.name]
-            result['site'] = spider.name
             result.save()
 
     def search_finished(self, spider, item):
@@ -90,29 +89,30 @@ class DBWriterPipeline(object):
                                                                                 self.items_processed))
 
         item = dict(item)
-        task = self.get_task(search_phrase, spider.user_pk)
+        task = self.get_task(search_phrase, spider.user_pk, spider.name)
 
         if not 'error'in item.keys():
             self.save_result(item, spider, task)
 
         if self.search_finished(spider, item):
-            num_spiders =  len(task.status.split(" "))
-            num_spiders = 5 - num_spiders
-            run(search_phrase, task.user, num_spiders)
+           # num_spiders =  len(task.status.split(" "))
+           # num_spiders = 5 - num_spiders
+           # run(search_phrase, task.user, num_spiders)
+            run(search_phrase, task.user)
             spider.search_phrase = spider.search_phrase[1:]
 
             self.items_processed[spider.name] = 0
-            cur_status = task.status.replace(" {}".format(spider.name), "")
+            cur_status = "FINISHED"
             TasksItem.django_model.objects.filter(pk=task.pk).update(status=cur_status)
-            logging.log(logging.DEBUG, "Pipeline processing {}. Status: {}".format(search_phrase, cur_status))
-            if cur_status == "IN_PROGRESS":
-                TasksItem.django_model.objects.filter(pk=task.pk).update(status="FINISHED")
-                logging.log(logging.DEBUG, "Pipeline processing {}. FINISHED".format(search_phrase))
+        #    logging.log(logging.DEBUG, "Pipeline processing {}. Status: {}".format(search_phrase, cur_status))
+           # if cur_status == "IN_PROGRESS":
+           #     TasksItem.django_model.objects.filter(pk=task.pk).update(status="FINISHED")
+            logging.log(logging.DEBUG, "Pipeline processing {}. FINISHED".format(search_phrase))
                 #run(search_phrase, task.user)
         return item
 
 
-def run(search_phrase, user, num_spiders):
+def run(search_phrase, user):
     """
     The function that publishes phrase to redis channel.
 
@@ -123,6 +123,6 @@ def run(search_phrase, user, num_spiders):
     else:
         user_id = -1
     r = redis.StrictRedis(host='localhost', port=6379, db=0)
-    message =  json.dumps({'search_phrase':search_phrase, 'user_id':user_id, 'num_spiders':num_spiders})
+    message =  json.dumps({'search_phrase':search_phrase, 'user_id':user_id})
     r.publish('our-channel',message)
     logging.log(logging.INFO, "Pipeline sent message({}) to webserver".format(message))
