@@ -78,14 +78,12 @@ class MainView(TemplateView):
         The function that gets all finished tasks for current user.
 
         @param user: current user or None for anonymous user.
-        @return: tasks, sorted by id.
+        @return: last ten tasks
         """
-       # tasks = Tasks.objects.filter(user=user, status=FINISHED)
         tasks = Tasks.objects.order_by('keyword', '-id').distinct('keyword').values_list('id', flat=True)
-        print(tasks.query)
-        tasks = Tasks.objects.filter(pk__in=tasks).filter(user=user, status=FINISHED)
-        print(tasks.query)
-        return tasks[len(tasks)-10:]
+        tasks = Tasks.objects.filter(pk__in=tasks).filter(user=user, status=FINISHED).order_by('-id')
+        return reversed(tasks[:10])
+
 
     def save_task(self, task, value):
         """
@@ -113,10 +111,8 @@ class MainView(TemplateView):
         """
         POST method.
 
-        The function creates a new Task or gets an existing one for current user and his search phrase.
+        The function creates a new Task or gets an existing one for current user, his search phrase and the reserched site.
         If the Task is created or older than one day, the spiders_search method is called.
-        The database saves history of researches only for registered users.
-        The functions gets separately all 'finished' and 'in progress' tasks and transfer them into context.
         """
         print(request.POST)
         if request.user.is_authenticated():
@@ -147,7 +143,7 @@ class MainView(TemplateView):
         """
         GET method.
 
-        The functions gets separately all 'finished' and 'in progress' tasks and transfer them into context.
+        The functions gets separately all 'finished' tasks and transfer them into context.
         """
         if request.user.is_authenticated():
             user = request.user

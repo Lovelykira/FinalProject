@@ -6,13 +6,10 @@
            {% if user.is_authenticated %}
             <input type="hidden" id="user_id" value="{{user.id}}" >
             {% endif %}
-            <!--<form action="/" method="POST">-->
-                {% csrf_token %}
-                <div class="form-inline">
+            <div class="form">
                 <input type="text" size="40" placeholder="Search" name=search class="search">
                 <input type="submit" class="btn btn-primary go_button" value="GO"/>
-                </div>
-            <!--</form>-->
+            </div>
             <div class="row">
                 <div class="col-md-12">Previous searches:</div>
             </div>

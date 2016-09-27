@@ -26,34 +26,30 @@ img {
 }
 
 .search, .btn{
-    padding: 10px;
-    border: 1px groove;
+    padding: 15px;
+    #border: 1px groove;
     display: inline-block;
+    height:100%;
+}
+
+.form{
+    height:50px;
 }
 
 .btn{
-    background-color:#4CAF50
-}
+    background-color:#4CAF50;
+    border:none;
 
-.progress{
-display:inline-block;
-width: 80%;
-vertical-align: middle;
 }
-
-a.task::after {
-content: '\00a0';
-}
-
 
 .task_name{
-text-align:center;
-overflow-x: hidden;
-vertical-align: center;
+    text-align:center;
+    overflow-x: hidden;
+    vertical-align: center;
 }
 
 .row{
-display:flex;
-justify-content:center;
-align-items:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }

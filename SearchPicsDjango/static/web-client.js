@@ -2,7 +2,7 @@
  var isopen = false;
 
  window.onload = function() {
-        user_id = -1;
+       user_id = -1;
        if (document.getElementById('user_id') != null){
        user_id = document.getElementById('user_id').value;
        }
@@ -20,7 +20,6 @@
           data = JSON.parse(e.data);
           console.log(data);
           search_phrase = data['search_phrase'].slice(1, -1);
-          //data = e.data.slice(1, -1);
 
            var search_phrase_normalized = search_phrase;
            if (search_phrase.indexOf(" ")!= -1){
@@ -30,12 +29,14 @@
                $( ".progressbar."+search_phrase_normalized ).progressbar({
                     max:100,
                     value: $( ".progressbar."+search_phrase_normalized ).progressbar( "option", "value" ) + 33
-                   // value: 100*data['num_spiders']/3,
                 });
 
            }
            else{
-                $('#tasks div:lt(1)').remove();
+
+                if ($("#tasks div.row").length >=10){
+                    $('#tasks div:lt(1)').remove();
+                }
                 var newRow = $("<div />", {class:"row"}).appendTo("#tasks");
 
                 var newTaskCol = $("<div />", {class: "col-md-6 task_name"}).appendTo(newRow)
@@ -66,14 +67,20 @@
        isopen = false;
     }
 
-
-    $(".go_button").click(function(e){
+    function post(e){
         $.ajax({type: "POST",
                 url: "/",
                 data: {"search": $(".search").val()}
                 });
         $(".search").val("");
-        });
+        }
 
+    $(".go_button").click(post);
+
+    $('.search').keydown(function (e){
+        if(e.keyCode == 13){
+            post(e);
+        }
+    })
 
  };

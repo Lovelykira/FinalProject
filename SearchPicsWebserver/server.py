@@ -4,7 +4,7 @@ from autobahn.asyncio.websocket import WebSocketServerProtocol, \
 import logging
 import json
 
-user_messages = {}
+users = {}
 logging.basicConfig(level=logging.DEBUG)
 
 
@@ -12,40 +12,21 @@ class MyServerProtocol(WebSocketServerProtocol):
 
     def onConnect(self, request):
         """
-        When client connects this method updates global user_messages and sets connection_is_open to True
+        When client connects this method updates global users
         @param request: 
         @return: 
         """
         logging.info("Client connecting: {0}".format(request.peer))
-        self.connection_is_open = True
         self.user_id = request.params['user_id'][0]
         logging.info("Client user id: {0}".format(self.user_id))
-        global user_messages
-        user_messages[str(self.user_id)] = self
-        logging.info("user messages: {0}".format(user_messages))
-
+        global users
+        users[str(self.user_id)] = self
+        logging.info("user messages: {0}".format(users))
 
 
     def onOpen(self):
-        """
-        When connection is open this method checks if there are new messages from redis-server and if so sends it to
-        the client.
-        @return:
-        """
         logging.info("WebSocket connection open.")
 
-        # def send():
-        #     global messages
-        #     while len(user_messages[self.user_id]):
-        #         if not self.connection_is_open:
-        #             return
-        #         #result_mes = {'phrase_info':user_messages[self.user_id][0]}
-        #         self.sendMessage(json.dumps(user_messages[self.user_id][0]).encode('utf8'))
-        #         user_messages[self.user_id] = user_messages[self.user_id][1:]
-        #         logging.info('Sent message to client')
-        #     self.factory.loop.call_later(5, send)
-        #
-        # send()
 
     def onClose(self, wasClean, code, reason):
         logging.info("WebSocket connection closed: {0}".format(reason))
@@ -70,8 +51,7 @@ def main():
     @asyncio.coroutine
     def redis_subscriber():
         """
-        The function that subscribes to redis channel and waits for messages. Once one appear the function stores it in
-        global messages.
+        The function that subscribes to redis channel and waits for messages. Once one appear the function stores sends it to Web client
         @return:
         """
         # Create connection
@@ -94,10 +74,10 @@ def main():
             logging.info('type [user_id]: {}'.format(type(user_id)))
 
             res_message = {'search_phrase':value}
-            user_messages[user_id].sendMessage(json.dumps(res_message).encode('utf8'))
+            users[user_id].sendMessage(json.dumps(res_message).encode('utf8'))
             logging.info('Sent message to client')
-           # user_messages[user_id].append(res_message)
-            logging.info('user_messages[user_id]: {}'.format(user_messages[user_id]))
+           # users[user_id].append(res_message)
+            logging.info('users[user_id]: {}'.format(users[user_id]))
 
         # When finished, close the connection.
         connection.close()

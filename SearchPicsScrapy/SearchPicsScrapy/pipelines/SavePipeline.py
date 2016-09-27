@@ -13,6 +13,8 @@ django.setup()
 
 from main.models import Tasks, Results
 
+FINISHED = "FINISHED"
+
 
 class TasksItem(DjangoItem):
     django_model = Tasks
@@ -75,10 +77,8 @@ class DBWriterPipeline(object):
         The method that processes the item.
 
         If no error occurred it saves the result of spider's search.
-        Then if the spider finished searching the method updates current task in table 'tasks' by deleting the spider's
-        name from field 'status'.
-        When all spiders finish their searches, the method updates field 'status' in this task to 'finished' and sends
-        the signal to webserver about it by publishing the search phrase to redis channel.
+        Then if the spider finished searching the method updates table 'tasks' setting 'status' to 'FINISHED' and sends
+        the signal to webserver about it by publishing json that contains the search phrase and user_id to redis channel.
         @param item: dict with picture's image link as key and pictures image source as value.
         @param spider: Spider object
         @return: item
@@ -95,26 +95,19 @@ class DBWriterPipeline(object):
             self.save_result(item, spider, task)
 
         if self.search_finished(spider, item):
-           # num_spiders =  len(task.status.split(" "))
-           # num_spiders = 5 - num_spiders
-           # run(search_phrase, task.user, num_spiders)
             run(search_phrase, task.user)
             spider.search_phrase = spider.search_phrase[1:]
 
             self.items_processed[spider.name] = 0
-            cur_status = "FINISHED"
+            cur_status = FINISHED
             TasksItem.django_model.objects.filter(pk=task.pk).update(status=cur_status)
-        #    logging.log(logging.DEBUG, "Pipeline processing {}. Status: {}".format(search_phrase, cur_status))
-           # if cur_status == "IN_PROGRESS":
-           #     TasksItem.django_model.objects.filter(pk=task.pk).update(status="FINISHED")
             logging.log(logging.DEBUG, "Pipeline processing {}. FINISHED".format(search_phrase))
-                #run(search_phrase, task.user)
         return item
 
 
 def run(search_phrase, user):
     """
-    The function that publishes phrase to redis channel.
+    The function that publishes json that contains the search phrase and user_id to redis channel.
 
     @param search_phrase: str
     """
