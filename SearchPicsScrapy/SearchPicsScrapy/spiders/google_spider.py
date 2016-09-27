@@ -3,7 +3,13 @@ from scrapy_redis.spiders import RedisSpider
 import logging
 import json
 
-SEARCH = 'asd'
+from scrapy.conf import settings
+settings.overrides['DOWNLOADER_MIDDLEWARES'] = {
+    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': 400,
+    'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware': None
+}
+
+SEARCH = ''
 START = 10
 
 

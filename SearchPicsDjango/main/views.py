@@ -72,8 +72,9 @@ class MainView(TemplateView):
         @param user: current user or None for anonymous user.
         @return: tasks, sorted by id.
         """
+       # tasks = Tasks.objects.filter(user=user, status=FINISHED)
         tasks = Tasks.objects.filter(user=user, status=FINISHED)
-        return sorted(tasks, key=byID)
+        return reversed(sorted(tasks, key=byID, reverse=True)[:10])
 
     def save_task(self, task, value):
         """
@@ -94,7 +95,8 @@ class MainView(TemplateView):
         @return: normalized string.
         """
         q = re.compile(r'[^a-zA-Z0-9_ ]')
-        return q.sub('', value)
+        res = q.sub('', value)
+        return res.rstrip()
 
     def post(self, request, *args, **kwargs):
         """

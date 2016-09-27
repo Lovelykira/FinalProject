@@ -1,0 +1,1013 @@
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "on", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'on'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "off", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'off'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45038
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45048
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "run", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'run'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: ["'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'", "'run'"]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45154
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45180
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45188
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45200
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45210
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45216
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45222
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45266
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45276
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45292
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}]
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}]
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}]
+ERROR:asyncio:Exception in callback MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37
+handle: <TimerHandle when=24020.791340799 MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/events.py", line 125, in _run
+    self._callback(*self._args)
+  File "SearchPicsWebserver/server.py", line 43, in send
+    self.sendMessage(user_messages[self.user_id][0].encode('utf8'))
+AttributeError: 'dict' object has no attribute 'encode'
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "call", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'call'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '-1'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '0'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}, {'search_phrase': "'call'", 'num_spiders': '1'}]
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45356
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45400
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45448
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45462
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "1000", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'1000'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'1000'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "1000", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'1000'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'1000'", 'num_spiders': '0'}, {'search_phrase': "'1000'", 'num_spiders': '-1'}]
+ERROR:asyncio:Exception in callback MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37
+handle: <TimerHandle when=24553.055979359 MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/events.py", line 125, in _run
+    self._callback(*self._args)
+  File "SearchPicsWebserver/server.py", line 43, in send
+    self.sendMessage(user_messages[self.user_id][0].encode('utf8'))
+AttributeError: 'dict' object has no attribute 'encode'
+INFO:root:Received: '{"num_spiders": -2, "search_phrase": "1000", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'1000'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'1000'", 'num_spiders': '0'}, {'search_phrase': "'1000'", 'num_spiders': '-1'}, {'search_phrase': "'1000'", 'num_spiders': '-2'}]
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45522
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45536
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "101", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'101'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '0', 'search_phrase': "'101'"}]
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "101", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'101'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '0', 'search_phrase': "'101'"}, {'num_spiders': '-1', 'search_phrase': "'101'"}]
+ERROR:asyncio:Exception in callback MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37
+handle: <TimerHandle when=24683.280664238 MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/events.py", line 125, in _run
+    self._callback(*self._args)
+  File "SearchPicsWebserver/server.py", line 43, in send
+    self.sendMessage(user_messages[self.user_id][0].encode('utf8'))
+AttributeError: 'dict' object has no attribute 'encode'
+INFO:root:Received: '{"num_spiders": -2, "search_phrase": "101", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'101'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '0', 'search_phrase': "'101'"}, {'num_spiders': '-1', 'search_phrase': "'101'"}, {'num_spiders': '-2', 'search_phrase': "'101'"}]
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45590
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45606
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "22", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'22'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'22'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "22", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'22'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'22'", 'num_spiders': '0'}, {'search_phrase': "'22'", 'num_spiders': '-1'}]
+ERROR:asyncio:Exception in callback MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37
+handle: <TimerHandle when=24859.679104761 MyServerProtocol.onOpen.<locals>.send() at SearchPicsWebserver/server.py:37>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/events.py", line 125, in _run
+    self._callback(*self._args)
+  File "SearchPicsWebserver/server.py", line 43, in send
+    self.sendMessage(user_messages[self.user_id][0])
+  File "/home/user/Projects/FinalProject/SearchPicsWebserver/.env/lib/python3.5/site-packages/autobahn/websocket/protocol.py", line 2163, in sendMessage
+    assert(type(payload) == bytes)
+AssertionError
+INFO:root:Received: '{"num_spiders": -2, "search_phrase": "22", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'22'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'22'", 'num_spiders': '0'}, {'search_phrase': "'22'", 'num_spiders': '-1'}, {'search_phrase': "'22'", 'num_spiders': '-2'}]
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45722
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45734
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "23", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'23'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'23'", 'num_spiders': '0'}]
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "23", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'23'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'23'", 'num_spiders': '0'}, {'search_phrase': "'23'", 'num_spiders': '-1'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": -2, "search_phrase": "23", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'23'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'23'", 'num_spiders': '-2'}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45804
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45816
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "24", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'24'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '0', 'search_phrase': "'24'"}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "24", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'24'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '0', 'search_phrase': "'24'"}, {'num_spiders': '1', 'search_phrase': "'24'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "24", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'24'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '2', 'search_phrase': "'24'"}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45882
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45892
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "25", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'25'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'25'", 'num_spiders': '-1'}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "25", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'25'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'25'", 'num_spiders': '-1'}, {'search_phrase': "'25'", 'num_spiders': '0'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "25", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'25'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'25'", 'num_spiders': '1'}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:45958
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:45970
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": -1, "search_phrase": "26", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'26'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '-1', 'search_phrase': "'26'"}]
+INFO:root:Received: '{"num_spiders": 0, "search_phrase": "26", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'26'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '-1', 'search_phrase': "'26'"}, {'num_spiders': '0', 'search_phrase': "'26'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "26", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'26'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'26'"}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:46018
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46032
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "27", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'27'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'27'"}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "27", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'27'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'27'"}, {'num_spiders': '2', 'search_phrase': "'27'"}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "27", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'27'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'27'"}, {'num_spiders': '2', 'search_phrase': "'27'"}, {'num_spiders': '3', 'search_phrase': "'27'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:46562
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46570
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46580
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "28", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'28'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'28'"}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "28", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'28'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'28'"}, {'num_spiders': '2', 'search_phrase': "'28'"}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "28", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'28'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'28'"}, {'num_spiders': '2', 'search_phrase': "'28'"}, {'num_spiders': '3', 'search_phrase': "'28'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "29", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'29'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:46840
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:46852
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "30", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'30'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'30'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "30", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'30'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'30'", 'num_spiders': '1'}, {'search_phrase': "'30'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "30", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'30'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'30'", 'num_spiders': '1'}, {'search_phrase': "'30'", 'num_spiders': '2'}, {'search_phrase': "'30'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:47066
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:47080
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "31", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'31'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'31'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "31", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'31'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'31'", 'num_spiders': '1'}, {'search_phrase': "'31'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "31", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'31'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'31'", 'num_spiders': '1'}, {'search_phrase': "'31'", 'num_spiders': '2'}, {'search_phrase': "'31'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "33", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'33'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "34", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'34'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "35", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'35'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:47742
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:47758
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "36", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'36'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'36'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "36", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'36'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'36'", 'num_spiders': '1'}, {'search_phrase': "'36'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "36", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'36'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'36'", 'num_spiders': '1'}, {'search_phrase': "'36'", 'num_spiders': '2'}, {'search_phrase': "'36'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:47826
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:47866
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:47876
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:47890
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "37", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'37'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'37'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "37", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'37'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'37'", 'num_spiders': '1'}, {'search_phrase': "'37'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "37", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'37'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'37'", 'num_spiders': '1'}, {'search_phrase': "'37'", 'num_spiders': '1'}, {'search_phrase': "'37'", 'num_spiders': '2'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:47954
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:47966
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "38", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'38'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'38'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "38", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'38'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'38'", 'num_spiders': '1'}, {'search_phrase': "'38'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "38", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'38'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'38'", 'num_spiders': '1'}, {'search_phrase': "'38'", 'num_spiders': '2'}, {'search_phrase': "'38'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48070
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48086
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "39", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'39'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'39'"}]
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "39", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'39'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '2', 'search_phrase': "'39'"}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "39", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'39'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '2', 'search_phrase': "'39'"}, {'num_spiders': '3', 'search_phrase': "'39'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48120
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48138
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "40", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'40'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'40'"}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "40", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'40'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'40'"}, {'num_spiders': '2', 'search_phrase': "'40'"}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "40", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'40'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'40'"}, {'num_spiders': '2', 'search_phrase': "'40'"}, {'num_spiders': '3', 'search_phrase': "'40'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48196
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48208
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48220
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "41", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'41'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'41'"}]
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "41", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'41'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '2', 'search_phrase': "'41'"}]
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "41", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'41'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '3', 'search_phrase': "'41'"}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48296
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48312
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "42", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'42'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'42'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "42", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'42'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'42'", 'num_spiders': '1'}, {'search_phrase': "'42'", 'num_spiders': '2'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "42", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'42'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'42'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48352
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "43", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'43'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'43'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "43", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'43'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'43'", 'num_spiders': '1'}, {'search_phrase': "'43'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "43", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'43'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'43'", 'num_spiders': '1'}, {'search_phrase': "'43'", 'num_spiders': '2'}, {'search_phrase': "'43'", 'num_spiders': '2'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48444
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48456
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "45", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'45'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'45'"}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "45", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'45'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'45'"}, {'num_spiders': '2', 'search_phrase': "'45'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "45", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'45'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '3', 'search_phrase': "'45'"}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48628
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48634
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48754
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48772
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "44", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'44'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'44'"}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "44", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'44'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '1', 'search_phrase': "'44'"}, {'num_spiders': '2', 'search_phrase': "'44'"}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "44", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'44'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'num_spiders': '3', 'search_phrase': "'44'"}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48844
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48862
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "46", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'46'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'46'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "46", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'46'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'46'", 'num_spiders': '1'}, {'search_phrase': "'46'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "46", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'46'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'46'", 'num_spiders': '1'}, {'search_phrase': "'46'", 'num_spiders': '2'}, {'search_phrase': "'46'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:48958
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:48974
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "47", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'47'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'47'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "47", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'47'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'47'", 'num_spiders': '1'}, {'search_phrase': "'47'", 'num_spiders': '2'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "47", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'47'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'47'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:root:Client connecting: tcp:127.0.0.1:49038
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:49052
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "48", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'48'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'48'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "48", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'48'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'48'", 'num_spiders': '1'}, {'search_phrase': "'48'", 'num_spiders': '2'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "48", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'48'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'48'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:49090
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "49", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'49'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'49'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "49", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'49'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'49'", 'num_spiders': '1'}, {'search_phrase': "'49'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "49", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'49'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'49'", 'num_spiders': '1'}, {'search_phrase': "'49'", 'num_spiders': '2'}, {'search_phrase': "'49'", 'num_spiders': '2'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:49106
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:WebSocket connection closed: None
+INFO:root:Client connecting: tcp:127.0.0.1:49124
+INFO:root:Client user id: -1
+INFO:root:user messages: {'-1': []}
+INFO:root:WebSocket connection open.
+INFO:root:Received: '{"num_spiders": 1, "search_phrase": "6", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'6'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'6'", 'num_spiders': '1'}]
+INFO:root:Received: '{"num_spiders": 2, "search_phrase": "6", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'6'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'6'", 'num_spiders': '1'}, {'search_phrase': "'6'", 'num_spiders': '2'}]
+INFO:root:Received: '{"num_spiders": 3, "search_phrase": "6", "user_id": -1}' on channel 'our-channel'
+INFO:root:user_id: -1 value: "'6'"
+INFO:root:type [user_id]: <class 'str'>
+INFO:root:user_messages[user_id]: [{'search_phrase': "'6'", 'num_spiders': '1'}, {'search_phrase': "'6'", 'num_spiders': '2'}, {'search_phrase': "'6'", 'num_spiders': '3'}]
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:Sent message to client
+INFO:root:WebSocket connection closed: None
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Redis connection made
+INFO:asyncio_redis:EOF received in RedisProtocol
+INFO:asyncio_redis:Redis connection lost
+INFO:asyncio_redis:Connecting to redis
+INFO:asyncio_redis:Connecting to redis failed. Retrying in 0 seconds
+INFO:asyncio_redis:Connecting to redis

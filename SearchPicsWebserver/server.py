@@ -39,7 +39,8 @@ class MyServerProtocol(WebSocketServerProtocol):
             while len(user_messages[self.user_id]):
                 if not self.connection_is_open:
                     return
-                self.sendMessage(user_messages[self.user_id][0].encode('utf8'))
+                #result_mes = {'phrase_info':user_messages[self.user_id][0]}
+                self.sendMessage(json.dumps(user_messages[self.user_id][0]).encode('utf8'))
                 user_messages[self.user_id] = user_messages[self.user_id][1:]
                 logging.info('Sent message to client')
             self.factory.loop.call_later(5, send)
@@ -89,9 +90,12 @@ def main():
             reply = json.loads(reply.value)
             user_id = str(reply['user_id'])
             value = repr(reply['search_phrase'])
+            num_spiders = repr(reply['num_spiders'])
             logging.info('user_id: {} value: {}'.format(str(user_id), repr(value)))
             logging.info('type [user_id]: {}'.format(type(user_id)))
-            user_messages[user_id].append(value)
+
+            res_message = {'search_phrase':value, 'num_spiders':num_spiders}
+            user_messages[user_id].append(res_message)
             logging.info('user_messages[user_id]: {}'.format(user_messages[user_id]))
 
         # When finished, close the connection.

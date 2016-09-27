@@ -1,0 +1,434 @@
+13396:C 26 Sep 15:16:30.640 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13396:M 26 Sep 15:16:30.641 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13396:M 26 Sep 15:16:30.641 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13409:C 26 Sep 15:16:31.847 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13409:M 26 Sep 15:16:31.848 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13409:M 26 Sep 15:16:31.848 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13410:C 26 Sep 15:16:33.862 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13410:M 26 Sep 15:16:33.864 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13410:M 26 Sep 15:16:33.864 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13427:C 26 Sep 15:16:37.392 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13427:M 26 Sep 15:16:37.393 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13427:M 26 Sep 15:16:37.394 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13559:C 26 Sep 15:19:41.217 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13559:M 26 Sep 15:19:41.230 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13559:M 26 Sep 15:19:41.231 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13578:C 26 Sep 15:19:42.293 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13578:M 26 Sep 15:19:42.299 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13578:M 26 Sep 15:19:42.300 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13699:C 26 Sep 15:19:44.792 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13699:M 26 Sep 15:19:44.795 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13699:M 26 Sep 15:19:44.795 # Creating Server TCP listening socket *:6379: bind: Address already in use
+13773:C 26 Sep 15:19:48.591 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+13773:M 26 Sep 15:19:48.593 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+13773:M 26 Sep 15:19:48.594 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14167:C 26 Sep 15:24:20.575 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14167:M 26 Sep 15:24:20.583 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14167:M 26 Sep 15:24:20.586 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14182:C 26 Sep 15:24:21.737 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14182:M 26 Sep 15:24:21.738 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14182:M 26 Sep 15:24:21.738 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14197:C 26 Sep 15:24:23.798 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14197:M 26 Sep 15:24:23.802 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14197:M 26 Sep 15:24:23.802 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14198:C 26 Sep 15:24:26.820 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14198:M 26 Sep 15:24:26.821 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14198:M 26 Sep 15:24:26.821 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14255:C 26 Sep 15:26:41.131 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14255:M 26 Sep 15:26:41.132 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14255:M 26 Sep 15:26:41.139 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14267:C 26 Sep 15:26:42.209 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14267:M 26 Sep 15:26:42.210 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14267:M 26 Sep 15:26:42.218 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14284:C 26 Sep 15:26:44.802 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14284:M 26 Sep 15:26:44.804 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14284:M 26 Sep 15:26:44.804 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14289:C 26 Sep 15:26:48.148 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14289:M 26 Sep 15:26:48.149 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14289:M 26 Sep 15:26:48.149 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14496:C 26 Sep 15:34:01.389 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14496:M 26 Sep 15:34:01.394 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14496:M 26 Sep 15:34:01.398 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14510:C 26 Sep 15:34:02.437 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14510:M 26 Sep 15:34:02.447 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14510:M 26 Sep 15:34:02.448 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14514:C 26 Sep 15:34:04.464 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14514:M 26 Sep 15:34:04.465 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14514:M 26 Sep 15:34:04.465 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14524:C 26 Sep 15:34:08.321 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14524:M 26 Sep 15:34:08.325 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14524:M 26 Sep 15:34:08.329 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14741:C 26 Sep 15:43:04.989 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14741:M 26 Sep 15:43:04.999 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14741:M 26 Sep 15:43:04.999 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14755:C 26 Sep 15:43:06.228 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14755:M 26 Sep 15:43:06.229 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14755:M 26 Sep 15:43:06.229 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14760:C 26 Sep 15:43:08.246 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14760:M 26 Sep 15:43:08.247 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14760:M 26 Sep 15:43:08.247 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14765:C 26 Sep 15:43:11.284 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14765:M 26 Sep 15:43:11.286 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14765:M 26 Sep 15:43:11.286 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14817:C 26 Sep 15:45:16.498 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14817:M 26 Sep 15:45:16.526 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14817:M 26 Sep 15:45:16.526 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14832:C 26 Sep 15:45:17.550 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14832:M 26 Sep 15:45:17.563 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14832:M 26 Sep 15:45:17.567 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14838:C 26 Sep 15:45:19.578 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14838:M 26 Sep 15:45:19.578 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14838:M 26 Sep 15:45:19.578 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14842:C 26 Sep 15:45:22.852 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14842:M 26 Sep 15:45:22.854 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14842:M 26 Sep 15:45:22.854 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14914:C 26 Sep 15:48:10.529 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14914:M 26 Sep 15:48:10.543 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14914:M 26 Sep 15:48:10.543 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14928:C 26 Sep 15:48:12.526 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14928:M 26 Sep 15:48:12.528 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14928:M 26 Sep 15:48:12.528 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14930:C 26 Sep 15:48:14.541 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14930:M 26 Sep 15:48:14.543 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14930:M 26 Sep 15:48:14.543 # Creating Server TCP listening socket *:6379: bind: Address already in use
+14935:C 26 Sep 15:48:17.984 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+14935:M 26 Sep 15:48:17.984 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+14935:M 26 Sep 15:48:17.984 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15065:C 26 Sep 15:50:39.119 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15065:M 26 Sep 15:50:39.119 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15065:M 26 Sep 15:50:39.119 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15078:C 26 Sep 15:50:40.144 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15078:M 26 Sep 15:50:40.144 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15078:M 26 Sep 15:50:40.144 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15085:C 26 Sep 15:50:43.024 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15085:M 26 Sep 15:50:43.025 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15085:M 26 Sep 15:50:43.025 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15093:C 26 Sep 15:50:46.178 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15093:M 26 Sep 15:50:46.178 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15093:M 26 Sep 15:50:46.178 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15172:C 26 Sep 15:53:47.652 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15172:M 26 Sep 15:53:47.667 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15172:M 26 Sep 15:53:47.667 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15191:C 26 Sep 15:53:48.792 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15191:M 26 Sep 15:53:48.795 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15191:M 26 Sep 15:53:48.802 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15199:C 26 Sep 15:53:51.719 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15199:M 26 Sep 15:53:51.721 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15199:M 26 Sep 15:53:51.723 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15205:C 26 Sep 15:53:54.836 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15205:M 26 Sep 15:53:54.837 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15205:M 26 Sep 15:53:54.837 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15270:C 26 Sep 15:55:20.228 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15270:M 26 Sep 15:55:20.231 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15270:M 26 Sep 15:55:20.232 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15282:C 26 Sep 15:55:21.317 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15282:M 26 Sep 15:55:21.329 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15282:M 26 Sep 15:55:21.334 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15293:C 26 Sep 15:55:23.688 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15293:M 26 Sep 15:55:23.690 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15293:M 26 Sep 15:55:23.691 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15300:C 26 Sep 15:55:27.377 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15300:M 26 Sep 15:55:27.379 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15300:M 26 Sep 15:55:27.380 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15356:C 26 Sep 15:56:56.441 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15356:M 26 Sep 15:56:56.442 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15356:M 26 Sep 15:56:56.450 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15368:C 26 Sep 15:56:57.476 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15368:M 26 Sep 15:56:57.477 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15368:M 26 Sep 15:56:57.478 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15376:C 26 Sep 15:57:00.220 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15376:M 26 Sep 15:57:00.222 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15376:M 26 Sep 15:57:00.222 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15383:C 26 Sep 15:57:03.703 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15383:M 26 Sep 15:57:03.703 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15383:M 26 Sep 15:57:03.704 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15432:C 26 Sep 15:58:20.912 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15432:M 26 Sep 15:58:20.927 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15432:M 26 Sep 15:58:20.928 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15450:C 26 Sep 15:58:22.000 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15450:M 26 Sep 15:58:22.003 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15450:M 26 Sep 15:58:22.006 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15455:C 26 Sep 15:58:24.058 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15455:M 26 Sep 15:58:24.059 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15455:M 26 Sep 15:58:24.063 # Creating Server TCP listening socket *:6379: bind: Address already in use
+15457:C 26 Sep 15:58:27.254 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+15457:M 26 Sep 15:58:27.255 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+15457:M 26 Sep 15:58:27.256 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16191:C 26 Sep 16:12:24.055 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16191:M 26 Sep 16:12:24.060 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16191:M 26 Sep 16:12:24.062 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16204:C 26 Sep 16:12:25.388 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16204:M 26 Sep 16:12:25.391 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16204:M 26 Sep 16:12:25.393 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16216:C 26 Sep 16:12:27.462 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16216:M 26 Sep 16:12:27.463 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16216:M 26 Sep 16:12:27.463 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16223:C 26 Sep 16:12:30.503 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16223:M 26 Sep 16:12:30.504 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16223:M 26 Sep 16:12:30.504 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16471:C 26 Sep 16:21:06.284 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16471:M 26 Sep 16:21:06.285 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16471:M 26 Sep 16:21:06.285 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16487:C 26 Sep 16:21:07.493 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16487:M 26 Sep 16:21:07.494 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16487:M 26 Sep 16:21:07.494 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16492:C 26 Sep 16:21:09.514 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16492:M 26 Sep 16:21:09.517 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16492:M 26 Sep 16:21:09.518 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16493:C 26 Sep 16:21:12.547 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16493:M 26 Sep 16:21:12.548 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16493:M 26 Sep 16:21:12.549 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16643:C 26 Sep 16:25:01.524 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16643:M 26 Sep 16:25:01.529 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16643:M 26 Sep 16:25:01.530 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16659:C 26 Sep 16:25:02.634 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16659:M 26 Sep 16:25:02.634 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16659:M 26 Sep 16:25:02.634 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16675:C 26 Sep 16:25:05.018 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16675:M 26 Sep 16:25:05.021 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16675:M 26 Sep 16:25:05.022 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16683:C 26 Sep 16:25:08.651 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16683:M 26 Sep 16:25:08.654 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16683:M 26 Sep 16:25:08.655 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16912:C 26 Sep 16:29:45.581 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16912:M 26 Sep 16:29:45.598 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16912:M 26 Sep 16:29:45.599 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16925:C 26 Sep 16:29:46.692 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16925:M 26 Sep 16:29:46.693 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16925:M 26 Sep 16:29:46.693 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16926:C 26 Sep 16:29:48.717 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16926:M 26 Sep 16:29:48.722 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16926:M 26 Sep 16:29:48.723 # Creating Server TCP listening socket *:6379: bind: Address already in use
+16932:C 26 Sep 16:29:51.779 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+16932:M 26 Sep 16:29:51.780 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+16932:M 26 Sep 16:29:51.780 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17067:C 26 Sep 16:33:04.967 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17067:M 26 Sep 16:33:04.968 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17067:M 26 Sep 16:33:04.968 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17077:C 26 Sep 16:33:06.023 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17077:M 26 Sep 16:33:06.024 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17077:M 26 Sep 16:33:06.024 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17089:C 26 Sep 16:33:08.580 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17089:M 26 Sep 16:33:08.580 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17089:M 26 Sep 16:33:08.580 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17090:C 26 Sep 16:33:11.593 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17090:M 26 Sep 16:33:11.593 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17090:M 26 Sep 16:33:11.593 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17182:C 26 Sep 16:35:36.107 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17182:M 26 Sep 16:35:36.111 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17182:M 26 Sep 16:35:36.112 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17196:C 26 Sep 16:35:38.134 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17196:M 26 Sep 16:35:38.136 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17196:M 26 Sep 16:35:38.137 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17215:C 26 Sep 16:35:40.412 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17215:M 26 Sep 16:35:40.412 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17215:M 26 Sep 16:35:40.413 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17229:C 26 Sep 16:35:44.375 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17229:M 26 Sep 16:35:44.376 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17229:M 26 Sep 16:35:44.376 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17474:C 26 Sep 16:41:13.960 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17474:M 26 Sep 16:41:13.977 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17474:M 26 Sep 16:41:13.978 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17487:C 26 Sep 16:41:15.070 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17487:M 26 Sep 16:41:15.076 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17487:M 26 Sep 16:41:15.076 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17500:C 26 Sep 16:41:17.386 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17500:M 26 Sep 16:41:17.390 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17500:M 26 Sep 16:41:17.390 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17520:C 26 Sep 16:41:20.984 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17520:M 26 Sep 16:41:20.985 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17520:M 26 Sep 16:41:20.986 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17619:C 26 Sep 16:45:16.883 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17619:M 26 Sep 16:45:16.903 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17619:M 26 Sep 16:45:16.904 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17633:C 26 Sep 16:45:18.006 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17633:M 26 Sep 16:45:18.007 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17633:M 26 Sep 16:45:18.007 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17644:C 26 Sep 16:45:20.014 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17644:M 26 Sep 16:45:20.016 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17644:M 26 Sep 16:45:20.017 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17654:C 26 Sep 16:45:23.906 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17654:M 26 Sep 16:45:23.913 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17654:M 26 Sep 16:45:23.914 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17707:C 26 Sep 16:47:10.310 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17707:M 26 Sep 16:47:10.311 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17707:M 26 Sep 16:47:10.311 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17721:C 26 Sep 16:47:11.415 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17721:M 26 Sep 16:47:11.415 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17721:M 26 Sep 16:47:11.416 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17735:C 26 Sep 16:47:14.284 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17735:M 26 Sep 16:47:14.286 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17735:M 26 Sep 16:47:14.287 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17747:C 26 Sep 16:47:17.629 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17747:M 26 Sep 16:47:17.630 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17747:M 26 Sep 16:47:17.631 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17882:C 26 Sep 16:50:53.778 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17882:M 26 Sep 16:50:53.786 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17882:M 26 Sep 16:50:53.790 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17893:C 26 Sep 16:50:54.821 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17893:M 26 Sep 16:50:54.822 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17893:M 26 Sep 16:50:54.822 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17896:C 26 Sep 16:50:56.985 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17896:M 26 Sep 16:50:56.986 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17896:M 26 Sep 16:50:56.986 # Creating Server TCP listening socket *:6379: bind: Address already in use
+17899:C 26 Sep 16:51:00.005 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+17899:M 26 Sep 16:51:00.012 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+17899:M 26 Sep 16:51:00.012 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18053:C 26 Sep 16:55:18.232 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18053:M 26 Sep 16:55:18.233 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18053:M 26 Sep 16:55:18.233 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18063:C 26 Sep 16:55:19.296 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18063:M 26 Sep 16:55:19.303 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18063:M 26 Sep 16:55:19.306 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18082:C 26 Sep 16:55:22.082 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18082:M 26 Sep 16:55:22.083 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18082:M 26 Sep 16:55:22.083 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18085:C 26 Sep 16:55:25.350 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18085:M 26 Sep 16:55:25.351 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18085:M 26 Sep 16:55:25.352 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18217:C 26 Sep 17:01:21.908 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18217:M 26 Sep 17:01:21.914 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18217:M 26 Sep 17:01:21.918 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18230:C 26 Sep 17:01:23.053 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18230:M 26 Sep 17:01:23.053 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18230:M 26 Sep 17:01:23.053 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18232:C 26 Sep 17:01:25.071 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18232:M 26 Sep 17:01:25.075 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18232:M 26 Sep 17:01:25.076 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18246:C 26 Sep 17:01:28.496 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18246:M 26 Sep 17:01:28.498 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18246:M 26 Sep 17:01:28.498 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18441:C 26 Sep 17:08:22.120 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18441:M 26 Sep 17:08:22.121 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18441:M 26 Sep 17:08:22.121 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18455:C 26 Sep 17:08:23.182 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18455:M 26 Sep 17:08:23.183 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18455:M 26 Sep 17:08:23.183 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18456:C 26 Sep 17:08:25.209 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18456:M 26 Sep 17:08:25.211 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18456:M 26 Sep 17:08:25.212 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18469:C 26 Sep 17:08:28.245 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18469:M 26 Sep 17:08:28.247 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18469:M 26 Sep 17:08:28.247 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18564:C 26 Sep 17:10:27.804 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18564:M 26 Sep 17:10:27.811 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18564:M 26 Sep 17:10:27.812 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18578:C 26 Sep 17:10:28.870 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18578:M 26 Sep 17:10:28.879 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18578:M 26 Sep 17:10:28.879 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18591:C 26 Sep 17:10:31.278 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18591:M 26 Sep 17:10:31.281 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18591:M 26 Sep 17:10:31.282 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18599:C 26 Sep 17:10:34.565 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18599:M 26 Sep 17:10:34.567 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18599:M 26 Sep 17:10:34.567 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18794:C 26 Sep 17:15:42.371 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18794:M 26 Sep 17:15:42.384 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18794:M 26 Sep 17:15:42.385 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18808:C 26 Sep 17:15:44.378 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18808:M 26 Sep 17:15:44.380 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18808:M 26 Sep 17:15:44.380 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18823:C 26 Sep 17:15:46.399 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18823:M 26 Sep 17:15:46.402 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18823:M 26 Sep 17:15:46.404 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18832:C 26 Sep 17:15:50.008 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18832:M 26 Sep 17:15:50.009 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18832:M 26 Sep 17:15:50.009 # Creating Server TCP listening socket *:6379: bind: Address already in use
+18990:C 26 Sep 17:18:59.794 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+18990:M 26 Sep 17:18:59.811 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+18990:M 26 Sep 17:18:59.811 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19003:C 26 Sep 17:19:00.825 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19003:M 26 Sep 17:19:00.835 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19003:M 26 Sep 17:19:00.835 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19005:C 26 Sep 17:19:02.915 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19005:M 26 Sep 17:19:02.917 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19005:M 26 Sep 17:19:02.917 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19021:C 26 Sep 17:19:06.134 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19021:M 26 Sep 17:19:06.135 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19021:M 26 Sep 17:19:06.135 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19092:C 26 Sep 17:20:57.347 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19092:M 26 Sep 17:20:57.356 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19092:M 26 Sep 17:20:57.356 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19104:C 26 Sep 17:20:58.388 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19104:M 26 Sep 17:20:58.391 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19104:M 26 Sep 17:20:58.391 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19116:C 26 Sep 17:21:00.880 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19116:M 26 Sep 17:21:00.882 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19116:M 26 Sep 17:21:00.883 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19117:C 26 Sep 17:21:03.895 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19117:M 26 Sep 17:21:03.897 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19117:M 26 Sep 17:21:03.897 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19155:C 26 Sep 17:22:15.795 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19155:M 26 Sep 17:22:15.796 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19155:M 26 Sep 17:22:15.796 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19170:C 26 Sep 17:22:16.861 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19170:M 26 Sep 17:22:16.862 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19170:M 26 Sep 17:22:16.862 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19178:C 26 Sep 17:22:19.448 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19178:M 26 Sep 17:22:19.450 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19178:M 26 Sep 17:22:19.451 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19180:C 26 Sep 17:22:22.465 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19180:M 26 Sep 17:22:22.466 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19180:M 26 Sep 17:22:22.467 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19243:C 26 Sep 17:23:57.935 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19243:M 26 Sep 17:23:57.944 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19243:M 26 Sep 17:23:57.944 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19254:C 26 Sep 17:23:59.002 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19254:M 26 Sep 17:23:59.004 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19254:M 26 Sep 17:23:59.006 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19263:C 26 Sep 17:24:01.121 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19263:M 26 Sep 17:24:01.122 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19263:M 26 Sep 17:24:01.123 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19267:C 26 Sep 17:24:04.400 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19267:M 26 Sep 17:24:04.401 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19267:M 26 Sep 17:24:04.401 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19342:C 26 Sep 17:26:10.833 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19342:M 26 Sep 17:26:10.846 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19342:M 26 Sep 17:26:10.847 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19355:C 26 Sep 17:26:11.885 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19355:M 26 Sep 17:26:11.891 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19355:M 26 Sep 17:26:11.893 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19366:C 26 Sep 17:26:14.721 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19366:M 26 Sep 17:26:14.723 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19366:M 26 Sep 17:26:14.723 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19377:C 26 Sep 17:26:17.899 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19377:M 26 Sep 17:26:17.901 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19377:M 26 Sep 17:26:17.901 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19449:C 26 Sep 17:28:29.793 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19449:M 26 Sep 17:28:29.806 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19449:M 26 Sep 17:28:29.807 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19463:C 26 Sep 17:28:31.733 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19463:M 26 Sep 17:28:31.734 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19463:M 26 Sep 17:28:31.734 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19464:C 26 Sep 17:28:33.750 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19464:M 26 Sep 17:28:33.753 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19464:M 26 Sep 17:28:33.753 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19473:C 26 Sep 17:28:37.294 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19473:M 26 Sep 17:28:37.295 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+19473:M 26 Sep 17:28:37.296 # Creating Server TCP listening socket *:6379: bind: Address already in use
+19730:C 26 Sep 17:32:02.258 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+19730:M 26 Sep 17:32:02.259 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.0.6 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 19730
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+19730:M 26 Sep 17:32:02.267 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+19730:M 26 Sep 17:32:02.267 # Server started, Redis version 3.0.6
+19730:M 26 Sep 17:32:02.267 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+19730:M 26 Sep 17:32:02.267 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+19730:M 26 Sep 17:32:02.281 * DB loaded from disk: 0.014 seconds
+19730:M 26 Sep 17:32:02.281 * The server is now ready to accept connections on port 6379

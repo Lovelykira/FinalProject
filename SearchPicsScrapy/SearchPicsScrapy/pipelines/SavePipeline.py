@@ -96,7 +96,11 @@ class DBWriterPipeline(object):
             self.save_result(item, spider, task)
 
         if self.search_finished(spider, item):
+            num_spiders =  len(task.status.split(" "))
+            num_spiders = 5 - num_spiders
+            run(search_phrase, task.user, num_spiders)
             spider.search_phrase = spider.search_phrase[1:]
+
             self.items_processed[spider.name] = 0
             cur_status = task.status.replace(" {}".format(spider.name), "")
             TasksItem.django_model.objects.filter(pk=task.pk).update(status=cur_status)
@@ -104,11 +108,11 @@ class DBWriterPipeline(object):
             if cur_status == "IN_PROGRESS":
                 TasksItem.django_model.objects.filter(pk=task.pk).update(status="FINISHED")
                 logging.log(logging.DEBUG, "Pipeline processing {}. FINISHED".format(search_phrase))
-                run(search_phrase, task.user)
+                #run(search_phrase, task.user)
         return item
 
 
-def run(search_phrase, user):
+def run(search_phrase, user, num_spiders):
     """
     The function that publishes phrase to redis channel.
 
@@ -119,6 +123,6 @@ def run(search_phrase, user):
     else:
         user_id = -1
     r = redis.StrictRedis(host='localhost', port=6379, db=0)
-    message =  json.dumps({'search_phrase':search_phrase, 'user_id':user_id})
+    message =  json.dumps({'search_phrase':search_phrase, 'user_id':user_id, 'num_spiders':num_spiders})
     r.publish('our-channel',message)
     logging.log(logging.INFO, "Pipeline sent message({}) to webserver".format(message))

@@ -1,0 +1,1536 @@
+2016-09-26 15:16:31 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:16:31 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:16:31 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:16:31 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:16:31 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:16:31 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:16:31 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:16:31 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:16:47 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:16:47 [root] INFO: Pipeline processing on of [u'on']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = 'on'); args=(u'on',)
+2016-09-26 12:16:47 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = 'on'); args=(u'on',)
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 20; args=(u'IN_PROGRESS yandex instagram', 20)
+2016-09-26 12:16:47 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 20; args=(u'IN_PROGRESS yandex instagram', 20)
+2016-09-26 12:16:47 [root] DEBUG: Pipeline processing on. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:18:38 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:18:38 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:18:38 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:18:38 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:18:38 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:18:38 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:18:38 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:18:38 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 15:18:46 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:18:46 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:18:47 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:18:47 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:18:47 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:18:47 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:18:47 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:18:47 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 15:19:42 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:19:42 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:19:42 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:19:42 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:19:42 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:19:42 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:19:42 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:19:42 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 15:24:21 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:24:21 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:24:21 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:24:21 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:24:21 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:24:21 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:24:21 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:24:21 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:24:32 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:24:32 [root] INFO: Pipeline processing run of [u'run']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = 'run'); args=(u'run',)
+2016-09-26 12:24:32 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = 'run'); args=(u'run',)
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 22; args=(u'IN_PROGRESS yandex instagram', 22)
+2016-09-26 12:24:32 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 22; args=(u'IN_PROGRESS yandex instagram', 22)
+2016-09-26 12:24:32 [root] DEBUG: Pipeline processing run. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:26:42 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:26:42 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:26:42 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:26:42 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:26:42 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:26:42 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:26:42 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:26:42 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 15:34:02 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:34:02 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:34:02 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:34:02 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:34:02 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:34:02 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:34:02 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:34:02 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:34:23 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:34:23 [root] INFO: Pipeline processing call of [u'call']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = 'call'); args=(u'call',)
+2016-09-26 12:34:23 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = 'call'); args=(u'call',)
+DEBUG (0.002) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 23; args=(u'IN_PROGRESS yandex instagram', 23)
+2016-09-26 12:34:23 [django.db.backends] DEBUG: (0.002) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 23; args=(u'IN_PROGRESS yandex instagram', 23)
+2016-09-26 12:34:23 [root] DEBUG: Pipeline processing call. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:43:05 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:43:05 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:43:05 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:43:05 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:43:05 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:43:05 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:43:05 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:43:05 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:43:17 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:43:17 [root] INFO: Pipeline processing 1000 of [u'1000']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '1000'); args=(u'1000',)
+2016-09-26 12:43:17 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '1000'); args=(u'1000',)
+2016-09-26 12:43:17 [root] INFO: Pipeline sent message({"num_spiders": 0, "search_phrase": "1000", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 24; args=(u'IN_PROGRESS yandex instagram', 24)
+2016-09-26 12:43:17 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 24; args=(u'IN_PROGRESS yandex instagram', 24)
+2016-09-26 12:43:17 [root] DEBUG: Pipeline processing 1000. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:45:17 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:45:17 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:45:17 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:45:17 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:45:17 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:45:17 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:45:17 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:45:17 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:45:28 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:45:28 [root] INFO: Pipeline processing 101 of [u'101']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '101'); args=(u'101',)
+2016-09-26 12:45:28 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '101'); args=(u'101',)
+2016-09-26 12:45:28 [root] INFO: Pipeline sent message({"num_spiders": 0, "search_phrase": "101", "user_id": -1}) to webserver
+DEBUG (0.000) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 25; args=(u'IN_PROGRESS yandex instagram', 25)
+2016-09-26 12:45:28 [django.db.backends] DEBUG: (0.000) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 25; args=(u'IN_PROGRESS yandex instagram', 25)
+2016-09-26 12:45:28 [root] DEBUG: Pipeline processing 101. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:48:11 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:48:11 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:48:11 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:48:11 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:48:11 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:48:11 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:48:11 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:48:11 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:48:22 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:48:22 [root] INFO: Pipeline processing 22 of [u'22']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '22'); args=(u'22',)
+2016-09-26 12:48:22 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '22'); args=(u'22',)
+2016-09-26 12:48:22 [root] INFO: Pipeline sent message({"num_spiders": 0, "search_phrase": "22", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 26; args=(u'IN_PROGRESS yandex instagram', 26)
+2016-09-26 12:48:22 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 26; args=(u'IN_PROGRESS yandex instagram', 26)
+2016-09-26 12:48:22 [root] DEBUG: Pipeline processing 22. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:50:40 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:50:40 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:50:40 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:50:40 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:50:40 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:50:40 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:50:40 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:50:40 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:50:46 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:50:46 [root] INFO: Pipeline processing 23 of [u'23']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '23'); args=(u'23',)
+2016-09-26 12:50:46 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '23'); args=(u'23',)
+2016-09-26 12:50:46 [root] INFO: Pipeline sent message({"num_spiders": 0, "search_phrase": "23", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 27; args=(u'IN_PROGRESS yandex instagram', 27)
+2016-09-26 12:50:46 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 27; args=(u'IN_PROGRESS yandex instagram', 27)
+2016-09-26 12:50:46 [root] DEBUG: Pipeline processing 23. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:53:48 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:53:48 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:53:48 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:53:48 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:53:48 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:53:48 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:53:48 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:53:48 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:53:54 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:53:54 [root] INFO: Pipeline processing 24 of [u'24']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '24'); args=(u'24',)
+2016-09-26 12:53:54 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '24'); args=(u'24',)
+2016-09-26 12:53:54 [root] INFO: Pipeline sent message({"num_spiders": 0, "search_phrase": "24", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 28; args=(u'IN_PROGRESS yandex instagram', 28)
+2016-09-26 12:53:54 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 28; args=(u'IN_PROGRESS yandex instagram', 28)
+2016-09-26 12:53:54 [root] DEBUG: Pipeline processing 24. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:55:21 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:55:21 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:55:21 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:55:21 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:55:21 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:55:21 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:55:21 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:55:21 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:55:27 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:55:27 [root] INFO: Pipeline processing 25 of [u'25']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '25'); args=(u'25',)
+2016-09-26 12:55:27 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '25'); args=(u'25',)
+2016-09-26 12:55:27 [root] INFO: Pipeline sent message({"num_spiders": 0, "search_phrase": "25", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 29; args=(u'IN_PROGRESS yandex', 29)
+2016-09-26 12:55:27 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 29; args=(u'IN_PROGRESS yandex', 29)
+2016-09-26 12:55:27 [root] DEBUG: Pipeline processing 25. Status: IN_PROGRESS yandex
+2016-09-26 15:56:57 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:56:57 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:56:57 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:56:57 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:56:57 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:56:57 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:56:57 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:56:57 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:57:03 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:57:03 [root] INFO: Pipeline processing 26 of [u'26']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '26'); args=(u'26',)
+2016-09-26 12:57:03 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '26'); args=(u'26',)
+2016-09-26 12:57:03 [root] INFO: Pipeline sent message({"num_spiders": -1, "search_phrase": "26", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 30; args=(u'IN_PROGRESS yandex instagram', 30)
+2016-09-26 12:57:03 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 30; args=(u'IN_PROGRESS yandex instagram', 30)
+2016-09-26 12:57:03 [root] DEBUG: Pipeline processing 26. Status: IN_PROGRESS yandex instagram
+2016-09-26 15:58:22 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 15:58:22 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 15:58:22 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 15:58:22 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 15:58:22 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 15:58:22 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 15:58:22 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 15:58:22 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 12:58:33 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 12:58:33 [root] INFO: Pipeline processing 27 of [u'27']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '27'); args=(u'27',)
+2016-09-26 12:58:33 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '27'); args=(u'27',)
+2016-09-26 12:58:33 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "27", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 31; args=(u'IN_PROGRESS yandex', 31)
+2016-09-26 12:58:33 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 31; args=(u'IN_PROGRESS yandex', 31)
+2016-09-26 12:58:33 [root] DEBUG: Pipeline processing 27. Status: IN_PROGRESS yandex
+2016-09-26 16:12:25 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:12:25 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:12:25 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:12:25 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:12:25 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:12:25 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:12:25 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:12:25 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:12:31 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:12:31 [root] INFO: Pipeline processing 28 of [u'28']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '28'); args=(u'28',)
+2016-09-26 13:12:31 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '28'); args=(u'28',)
+2016-09-26 13:12:31 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "28", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 32; args=(u'IN_PROGRESS yandex instagram', 32)
+2016-09-26 13:12:31 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 32; args=(u'IN_PROGRESS yandex instagram', 32)
+2016-09-26 13:12:31 [root] DEBUG: Pipeline processing 28. Status: IN_PROGRESS yandex instagram
+2016-09-26 16:21:07 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:21:07 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:21:07 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:21:07 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:21:07 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:21:07 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:21:07 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:21:07 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:21:18 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:21:18 [root] INFO: Pipeline processing 29 of [u'29']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '29'); args=(u'29',)
+2016-09-26 13:21:18 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '29'); args=(u'29',)
+2016-09-26 13:21:18 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "29", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 33; args=(u'IN_PROGRESS yandex', 33)
+2016-09-26 13:21:18 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 33; args=(u'IN_PROGRESS yandex', 33)
+2016-09-26 13:21:18 [root] DEBUG: Pipeline processing 29. Status: IN_PROGRESS yandex
+2016-09-26 16:22:09 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:22:09 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:22:09 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:22:09 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:22:09 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:22:09 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:22:09 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:22:09 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 16:23:46 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:23:46 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:23:46 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:23:46 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:23:46 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:23:46 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:23:46 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:23:46 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 16:25:02 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:25:02 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:25:02 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:25:02 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:25:02 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:25:02 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:25:02 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:25:02 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:25:08 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:25:08 [root] INFO: Pipeline processing 30 of [u'30']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '30'); args=(u'30',)
+2016-09-26 13:25:08 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '30'); args=(u'30',)
+2016-09-26 13:25:08 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "30", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 34; args=(u'IN_PROGRESS yandex instagram', 34)
+2016-09-26 13:25:08 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 34; args=(u'IN_PROGRESS yandex instagram', 34)
+2016-09-26 13:25:08 [root] DEBUG: Pipeline processing 30. Status: IN_PROGRESS yandex instagram
+2016-09-26 16:29:46 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:29:46 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:29:46 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:29:46 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:29:46 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:29:46 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:29:46 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:29:46 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:29:57 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:29:57 [root] INFO: Pipeline processing 31 of [u'31']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '31'); args=(u'31',)
+2016-09-26 13:29:57 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '31'); args=(u'31',)
+2016-09-26 13:29:57 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "31", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 35; args=(u'IN_PROGRESS yandex instagram', 35)
+2016-09-26 13:29:57 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 35; args=(u'IN_PROGRESS yandex instagram', 35)
+2016-09-26 13:29:57 [root] DEBUG: Pipeline processing 31. Status: IN_PROGRESS yandex instagram
+2016-09-26 16:33:06 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:33:06 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:33:06 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:33:06 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:33:06 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:33:06 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:33:06 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:33:06 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 16:35:36 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:35:36 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:35:36 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:35:36 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:35:36 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:35:36 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:35:36 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:35:36 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 16:41:14 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:41:14 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:41:14 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:41:14 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:41:14 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:41:14 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:41:14 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:41:14 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 16:45:17 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:45:17 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:45:17 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:45:17 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:45:17 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:45:17 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:45:17 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:45:17 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:45:29 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:45:29 [root] INFO: Pipeline processing 35 of [u'35']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '35'); args=(u'35',)
+2016-09-26 13:45:29 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '35'); args=(u'35',)
+2016-09-26 13:45:29 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "35", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 38; args=(u'IN_PROGRESS yandex instagram', 38)
+2016-09-26 13:45:29 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 38; args=(u'IN_PROGRESS yandex instagram', 38)
+2016-09-26 13:45:29 [root] DEBUG: Pipeline processing 35. Status: IN_PROGRESS yandex instagram
+2016-09-26 16:47:11 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:47:11 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:47:11 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:47:11 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:47:11 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:47:11 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:47:11 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:47:11 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:47:17 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:47:17 [root] INFO: Pipeline processing 36 of [u'36']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '36'); args=(u'36',)
+2016-09-26 13:47:17 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '36'); args=(u'36',)
+2016-09-26 13:47:17 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "36", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 39; args=(u'IN_PROGRESS yandex', 39)
+2016-09-26 13:47:17 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 39; args=(u'IN_PROGRESS yandex', 39)
+2016-09-26 13:47:17 [root] DEBUG: Pipeline processing 36. Status: IN_PROGRESS yandex
+2016-09-26 16:50:54 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:50:54 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:50:54 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:50:54 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:50:54 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:50:54 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:50:54 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:50:54 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:51:11 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:51:11 [root] INFO: Pipeline processing 37 of [u'37']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '37'); args=(u'37',)
+2016-09-26 13:51:11 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '37'); args=(u'37',)
+2016-09-26 13:51:11 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "37", "user_id": -1}) to webserver
+DEBUG (0.002) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 40; args=(u'IN_PROGRESS yandex instagram', 40)
+2016-09-26 13:51:11 [django.db.backends] DEBUG: (0.002) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 40; args=(u'IN_PROGRESS yandex instagram', 40)
+2016-09-26 13:51:11 [root] DEBUG: Pipeline processing 37. Status: IN_PROGRESS yandex instagram
+2016-09-26 16:55:19 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:55:19 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:55:19 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:55:19 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:55:19 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:55:19 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:55:19 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:55:19 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 13:55:31 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 13:55:31 [root] INFO: Pipeline processing 38 of [u'38']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '38'); args=(u'38',)
+2016-09-26 13:55:31 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '38'); args=(u'38',)
+2016-09-26 13:55:31 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "38", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 41; args=(u'IN_PROGRESS yandex instagram', 41)
+2016-09-26 13:55:31 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 41; args=(u'IN_PROGRESS yandex instagram', 41)
+2016-09-26 13:55:31 [root] DEBUG: Pipeline processing 38. Status: IN_PROGRESS yandex instagram
+2016-09-26 16:59:29 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:59:29 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:59:29 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:59:29 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:59:29 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:59:29 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:59:29 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:59:29 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 16:59:32 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 16:59:32 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 16:59:32 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 16:59:32 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 16:59:32 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 16:59:32 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 16:59:32 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 16:59:32 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 17:01:22 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:01:22 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:01:22 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:01:22 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:01:22 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:01:22 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:01:22 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:01:22 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:01:33 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:01:33 [root] INFO: Pipeline processing 39 of [u'39']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '39'); args=(u'39',)
+2016-09-26 14:01:33 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '39'); args=(u'39',)
+2016-09-26 14:01:33 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "39", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 42; args=(u'IN_PROGRESS yandex instagram', 42)
+2016-09-26 14:01:33 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 42; args=(u'IN_PROGRESS yandex instagram', 42)
+2016-09-26 14:01:33 [root] DEBUG: Pipeline processing 39. Status: IN_PROGRESS yandex instagram
+2016-09-26 14:04:13 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:04:13 [root] INFO: Pipeline processing 40 of [u'40']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '40'); args=(u'40',)
+2016-09-26 14:04:13 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '40'); args=(u'40',)
+2016-09-26 14:04:13 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "40", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS instagram' WHERE "main_tasks"."id" = 43; args=(u'IN_PROGRESS instagram', 43)
+2016-09-26 14:04:13 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS instagram' WHERE "main_tasks"."id" = 43; args=(u'IN_PROGRESS instagram', 43)
+2016-09-26 14:04:13 [root] DEBUG: Pipeline processing 40. Status: IN_PROGRESS instagram
+2016-09-26 17:08:22 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:08:22 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:08:23 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:08:23 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:08:23 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:08:23 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:08:23 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:08:23 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:08:34 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:08:34 [root] INFO: Pipeline processing 41 of [u'41']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '41'); args=(u'41',)
+2016-09-26 14:08:34 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '41'); args=(u'41',)
+2016-09-26 14:08:34 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "41", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 44; args=(u'IN_PROGRESS yandex instagram', 44)
+2016-09-26 14:08:34 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 44; args=(u'IN_PROGRESS yandex instagram', 44)
+2016-09-26 14:08:34 [root] DEBUG: Pipeline processing 41. Status: IN_PROGRESS yandex instagram
+2016-09-26 17:10:28 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:10:28 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:10:28 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:10:28 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:10:28 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:10:28 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:10:28 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:10:28 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:10:35 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:10:35 [root] INFO: Pipeline processing 42 of [u'42']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '42'); args=(u'42',)
+2016-09-26 14:10:35 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '42'); args=(u'42',)
+2016-09-26 14:10:35 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "42", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 45; args=(u'IN_PROGRESS yandex', 45)
+2016-09-26 14:10:35 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 45; args=(u'IN_PROGRESS yandex', 45)
+2016-09-26 14:10:35 [root] DEBUG: Pipeline processing 42. Status: IN_PROGRESS yandex
+2016-09-26 14:10:44 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:10:44 [root] INFO: Pipeline processing 43 of [u'43']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.000) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '43'); args=(u'43',)
+2016-09-26 14:10:44 [django.db.backends] DEBUG: (0.000) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '43'); args=(u'43',)
+2016-09-26 14:10:44 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "43", "user_id": -1}) to webserver
+DEBUG (0.006) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS instagram' WHERE "main_tasks"."id" = 46; args=(u'IN_PROGRESS instagram', 46)
+2016-09-26 14:10:44 [django.db.backends] DEBUG: (0.006) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS instagram' WHERE "main_tasks"."id" = 46; args=(u'IN_PROGRESS instagram', 46)
+2016-09-26 14:10:44 [root] DEBUG: Pipeline processing 43. Status: IN_PROGRESS instagram
+2016-09-26 17:15:43 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:15:43 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:15:43 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:15:43 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:15:43 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:15:43 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:15:43 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:15:43 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:15:54 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:15:54 [root] INFO: Pipeline processing 45 of [u'45']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '45'); args=(u'45',)
+2016-09-26 14:15:54 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '45'); args=(u'45',)
+2016-09-26 14:15:54 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "45", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 47; args=(u'IN_PROGRESS yandex instagram', 47)
+2016-09-26 14:15:54 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 47; args=(u'IN_PROGRESS yandex instagram', 47)
+2016-09-26 14:15:54 [root] DEBUG: Pipeline processing 45. Status: IN_PROGRESS yandex instagram
+2016-09-26 17:19:00 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:19:00 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:19:00 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:19:00 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:19:00 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:19:00 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:19:00 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:19:00 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 17:20:58 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:20:58 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:20:58 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:20:58 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:20:58 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:20:58 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:20:58 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:20:58 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 17:22:16 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:22:16 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:22:16 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:22:16 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:22:16 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:22:16 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:22:16 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:22:16 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:23:02 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:23:02 [root] INFO: Pipeline processing 44 of [u'44']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '44'); args=(u'44',)
+2016-09-26 14:23:02 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '44'); args=(u'44',)
+2016-09-26 14:23:02 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "44", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 48; args=(u'IN_PROGRESS yandex instagram', 48)
+2016-09-26 14:23:02 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 48; args=(u'IN_PROGRESS yandex instagram', 48)
+2016-09-26 14:23:02 [root] DEBUG: Pipeline processing 44. Status: IN_PROGRESS yandex instagram
+2016-09-26 17:23:58 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:23:58 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:23:58 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:23:58 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:23:58 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:23:58 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:23:58 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:23:58 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:24:11 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:24:11 [root] INFO: Pipeline processing 46 of [u'46']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '46'); args=(u'46',)
+2016-09-26 14:24:11 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '46'); args=(u'46',)
+2016-09-26 14:24:11 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "46", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 49; args=(u'IN_PROGRESS yandex', 49)
+2016-09-26 14:24:11 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 49; args=(u'IN_PROGRESS yandex', 49)
+2016-09-26 14:24:11 [root] DEBUG: Pipeline processing 46. Status: IN_PROGRESS yandex
+2016-09-26 17:26:11 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:26:11 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:26:11 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:26:11 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:26:11 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:26:11 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:26:11 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:26:11 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:26:18 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:26:18 [root] INFO: Pipeline processing 47 of [u'47']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '47'); args=(u'47',)
+2016-09-26 14:26:18 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '47'); args=(u'47',)
+2016-09-26 14:26:18 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "47", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 50; args=(u'IN_PROGRESS yandex instagram', 50)
+2016-09-26 14:26:18 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 50; args=(u'IN_PROGRESS yandex instagram', 50)
+2016-09-26 14:26:18 [root] DEBUG: Pipeline processing 47. Status: IN_PROGRESS yandex instagram
+2016-09-26 17:28:30 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:28:30 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:28:30 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:28:30 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:28:30 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:28:30 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:28:30 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:28:30 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2016-09-26 14:28:42 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:28:42 [root] INFO: Pipeline processing 48 of [u'48']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '48'); args=(u'48',)
+2016-09-26 14:28:42 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '48'); args=(u'48',)
+2016-09-26 14:28:42 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "48", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 51; args=(u'IN_PROGRESS yandex', 51)
+2016-09-26 14:28:42 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex' WHERE "main_tasks"."id" = 51; args=(u'IN_PROGRESS yandex', 51)
+2016-09-26 14:28:42 [root] DEBUG: Pipeline processing 48. Status: IN_PROGRESS yandex
+2016-09-26 14:28:56 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:28:56 [root] INFO: Pipeline processing 49 of [u'49']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '49'); args=(u'49',)
+2016-09-26 14:28:56 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '49'); args=(u'49',)
+2016-09-26 14:28:56 [root] INFO: Pipeline sent message({"num_spiders": 2, "search_phrase": "49", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS instagram' WHERE "main_tasks"."id" = 52; args=(u'IN_PROGRESS instagram', 52)
+2016-09-26 14:28:56 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS instagram' WHERE "main_tasks"."id" = 52; args=(u'IN_PROGRESS instagram', 52)
+2016-09-26 14:28:56 [root] DEBUG: Pipeline processing 49. Status: IN_PROGRESS instagram
+2016-09-26 14:29:56 [root] ERROR: Spider google couldn't parse the page
+2016-09-26 14:29:56 [root] INFO: Pipeline processing 6 of [u'6']. Item #{'google': 1, 'yandex': 0, 'instagram': 0}
+DEBUG (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '6'); args=(u'6',)
+2016-09-26 14:29:56 [django.db.backends] DEBUG: (0.001) SELECT "main_tasks"."id", "main_tasks"."status", "main_tasks"."keyword", "main_tasks"."date", "main_tasks"."user_id" FROM "main_tasks" WHERE ("main_tasks"."user_id" IS NULL AND "main_tasks"."keyword" = '6'); args=(u'6',)
+2016-09-26 14:29:56 [root] INFO: Pipeline sent message({"num_spiders": 1, "search_phrase": "6", "user_id": -1}) to webserver
+DEBUG (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 53; args=(u'IN_PROGRESS yandex instagram', 53)
+2016-09-26 14:29:56 [django.db.backends] DEBUG: (0.001) UPDATE "main_tasks" SET "status" = 'IN_PROGRESS yandex instagram' WHERE "main_tasks"."id" = 53; args=(u'IN_PROGRESS yandex instagram', 53)
+2016-09-26 14:29:56 [root] DEBUG: Pipeline processing 6. Status: IN_PROGRESS yandex instagram
+2016-09-26 17:32:03 [scrapy] INFO: Scrapy 1.1.2 started (bot: SearchPicsScrapy)
+2016-09-26 17:32:03 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'SearchPicsScrapy.SearchPicsScrapy.spiders', 'DUPEFILTER_CLASS': 'scrapy_redis.dupefilter.RFPDupeFilter', 'SPIDER_MODULES': ['SearchPicsScrapy.SearchPicsScrapy.spiders'], 'BOT_NAME': 'SearchPicsScrapy', 'SCHEDULER': 'scrapy_redis.scheduler.Scheduler', 'DOWNLOAD_DELAY': 1}
+2016-09-26 17:32:03 [scrapy] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2016-09-26 17:32:03 [google] INFO: Reading start URLs from redis key 'google:start_urls' (batch size: 16)
+2016-09-26 17:32:03 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/utils/deprecate.py:156: ScrapyDeprecationWarning: `scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware` class is deprecated, use `scrapy.downloadermiddlewares.useragent.UserAgentMiddleware` instead
+  ScrapyDeprecationWarning)
+
+2016-09-26 17:32:03 [py.warnings] WARNING: /home/user/Projects/FinalProject/SearchPicsScrapy/SearchPicsScrapy/middlewares.py:3: ScrapyDeprecationWarning: Module `scrapy.log` has been deprecated, Scrapy now relies on the builtin Python library for logging. Read the updated logging entry in the documentation to learn more.
+  from scrapy import log
+
+2016-09-26 17:32:03 [scrapy] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.chunked.ChunkedTransferMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2016-09-26 17:32:03 [scrapy] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+Unhandled error in Deferred:
+
+
+Traceback (most recent call last):
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/commands/crawl.py", line 57, in run
+    self.crawler_process.crawl(spname, **opts.spargs)
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/crawler.py", line 163, in crawl
+    return self._crawl(crawler, *args, **kwargs)
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/crawler.py", line 167, in _crawl
+    d = crawler.crawl(*args, **kwargs)
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1331, in unwindGenerator
+    return _inlineCallbacks(None, gen, Deferred())
+--- <exception caught here> ---
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/twisted/internet/defer.py", line 1185, in _inlineCallbacks
+    result = g.send(result)
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/crawler.py", line 90, in crawl
+    six.reraise(*exc_info)
+  File "/home/user/Projects/FinalProject/SearchPicsScrapy/.env/local/lib/python2.7/site-packages/scrapy/crawler.py", line 74, in crawl
+    yield self.engine.open_spider(self.spider, start_requests)
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:6379. Connection refused.

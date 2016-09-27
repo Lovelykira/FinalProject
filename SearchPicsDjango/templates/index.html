@@ -20,7 +20,16 @@
                 <div class="col-md-3"></div>
                 <div class="col-md-6" id="tasks">
                 {% for task in tasks %}
-                     <a href="/search/{{task.keyword}}" class="task">{{task.keyword}}</a>
+                     <div class="row">
+                         <div class="col-md-6 task_name">
+                             <a href="/search/{{task.keyword}}" class="task">{{task.keyword}}</a>
+                         </div>
+                         <div class="col-md-6 task_progress">
+                             <div class="progressbar 50 ui-progressbar ui-corner-all ui-widget ui-widget-content {{task.keyword}}" style="height:30px;" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+                                 <div class="ui-progressbar-value ui-corner-left ui-widget-header ui-progressbar-complete ui-corner-right" style="width: 102%;"></div>
+                             </div>
+                         </div>
+                     </div>
                 {% endfor %}
                 </div>
                 <div class="col-md-3"></div>
