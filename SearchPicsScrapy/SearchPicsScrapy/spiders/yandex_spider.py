@@ -15,7 +15,7 @@ class YandexSpider(RedisSpider):
         super(YandexSpider, self).__init__()
         self.search_phrase = []
         self.num_items = 10
-        self.user_pk = -1
+        self.user_pk = []
 
     def parse(self, response):
         """
@@ -65,9 +65,9 @@ class YandexSpider(RedisSpider):
         data_json = json.loads(data)
         data = data_json['value']
         if data_json['user']:
-            self.user_pk = data_json['user']
+            self.user_pk.append(data_json['user'])
         else:
-            self.user_pk = -1
+            self.user_pk.append(-1)
         self.search_phrase.append(data)
 
         return self.make_requests_from_url('https://yandex.ua/images/search?text=' + data)

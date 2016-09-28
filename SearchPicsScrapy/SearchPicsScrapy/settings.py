@@ -19,6 +19,8 @@ SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
 DOWNLOAD_DELAY = 1
+REDIS_START_URLS_AS_SET = False
+REDIS_START_URLS_BATCH_SIZE = 1
 
 ITEM_PIPELINES = {
     'SearchPicsScrapy.SearchPicsScrapy.pipelines.SavePipeline.DBWriterPipeline': 300,

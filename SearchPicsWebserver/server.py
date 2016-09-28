@@ -70,10 +70,10 @@ def main():
             reply = json.loads(reply.value)
             user_id = str(reply['user_id'])
             value = repr(reply['search_phrase'])
+            was_searched_before = reply['was_searched_before']
             logging.info('user_id: {} value: {}'.format(str(user_id), repr(value)))
-            logging.info('type [user_id]: {}'.format(type(user_id)))
 
-            res_message = {'search_phrase':value}
+            res_message = {'search_phrase':value, 'was_searched_before':was_searched_before}
             users[user_id].sendMessage(json.dumps(res_message).encode('utf8'))
             logging.info('Sent message to client')
            # users[user_id].append(res_message)

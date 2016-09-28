@@ -17,15 +17,22 @@
     socket.onmessage = function(e) {
        if (typeof e.data == "string") {
 
-          data = JSON.parse(e.data);
-          console.log(data);
-          search_phrase = data['search_phrase'].slice(1, -1);
+           data = JSON.parse(e.data);
+           console.log(data['was_searched_before']);
+           console.log(data);
+           search_phrase = data['search_phrase'].slice(1, -1);
+           if (data['was_searched_before']){
+                var value = 100;
+           }
+           else
+                var value = 33;
 
            var search_phrase_normalized = search_phrase;
            if (search_phrase.indexOf(" ")!= -1){
                 search_phrase_normalized = search_phrase.replace(" ", ".")
            }
-           if ($("."+search_phrase_normalized).length){
+           if ($("."+search_phrase_normalized).length ){
+               $( ".progressbar."+search_phrase_normalized ).progressbar();
                $( ".progressbar."+search_phrase_normalized ).progressbar({
                     max:100,
                     value: $( ".progressbar."+search_phrase_normalized ).progressbar( "option", "value" ) + 33
@@ -33,7 +40,6 @@
 
            }
            else{
-
                 if ($("#tasks div.row").length >=10){
                     $('#tasks div:lt(1)').remove();
                 }
@@ -53,7 +59,7 @@
                 var newProgressBar = $("<div />",{class:"progressbar "+search_phrase, style:"height:30px;"}).appendTo(newProgressCol);
                 $( ".progressbar."+search_phrase_normalized ).progressbar({
                     max:100,
-                    value: 33,
+                    value: value,
                 });
 
 

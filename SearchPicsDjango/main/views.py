@@ -80,9 +80,15 @@ class MainView(TemplateView):
         @param user: current user or None for anonymous user.
         @return: last ten tasks
         """
-        tasks = Tasks.objects.order_by('keyword', '-id').distinct('keyword').values_list('id', flat=True)
-        tasks = Tasks.objects.filter(pk__in=tasks).filter(user=user, status=FINISHED).order_by('-id')
-        return reversed(tasks[:10])
+        #tasks = Tasks.objects.order_by('keyword', '-id').distinct('keyword').values_list('id', flat=True)
+        tasks = Tasks.objects.all().filter(user=user, status=FINISHED).order_by('-id')
+        print(tasks)
+        print(tasks.query)
+        tasks = Tasks.objects.filter(pk__in=tasks).distinct('keyword')
+        #tasks = Tasks.objects.filter(pk__in=tasks).filter(user=user, status=FINISHED).order_by('-id')
+        print(tasks)
+        print(tasks.query)
+        return sorted(tasks[:10], key=byID)
 
 
     def save_task(self, task, value):
@@ -95,6 +101,7 @@ class MainView(TemplateView):
         task.status = START_STATUS
         task.keyword = value
         task.save()
+        Results.objects.filter(task=task).delete()
 
     def normalize_value(self, value):
         """
@@ -129,12 +136,32 @@ class MainView(TemplateView):
         task_yandex, created = Tasks.objects.get_or_create(keyword=value, user=user, site="yandex")
         task_instagram, created = Tasks.objects.get_or_create(keyword=value, user=user, site="instagram")
         one_day = timedelta(days=1)
-        if created or task_google.date + one_day < datetime.date(datetime.now()):
+        if created or task_google.date + one_day < datetime.date(datetime.now()) or task_google.status == START_STATUS\
+                or task_yandex.status == START_STATUS or task_instagram.status == START_STATUS:
             self.save_task(task_google, value)
             self.save_task(task_yandex, value)
             self.save_task(task_instagram, value)
             value = json.dumps({'value': value, 'user':user_pk})
             self.spiders_search(value)
+        else:
+            print("({}) already in database".format(value))
+            finished_tasks = self.get_finished_tasks(user)
+            task_on_screen = False
+            # for task in finished_tasks:
+            #     if value in task.keyword:
+            #         task_on_screen = True
+            #         print("({}) already on screen".format(value))
+            #         break
+            if not task_on_screen:
+                print("({}) not on screen".format(value))
+                if user:
+                    user_id = user.id
+                else:
+                    user_id = -1
+                r = redis.StrictRedis(host='localhost', port=6379, db=0)
+                message = json.dumps({'search_phrase': value, 'user_id': user_id, 'was_searched_before':True})
+                r.publish('our-channel', message)
+                print("Django sent message({}) to webserver".format(message))
 
         finished_tasks = self.get_finished_tasks(user)
         return render(request, 'index.html', {'tasks': finished_tasks})

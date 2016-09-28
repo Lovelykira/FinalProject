@@ -9,9 +9,6 @@ settings.overrides['DOWNLOADER_MIDDLEWARES'] = {
     'SearchPicsScrapy.SearchPicsScrapy.middlewares.RandomUserAgentMiddleware': None
 }
 
-SEARCH = ''
-START = 10
-
 
 class GoogleSpider(RedisSpider):
     """
@@ -24,7 +21,7 @@ class GoogleSpider(RedisSpider):
         super(GoogleSpider, self).__init__()
         self.search_phrase = []
         self.num_items = 10
-        self.user_pk = -1
+        self.user_pk = []
 
     def parse(self, response):
         """
@@ -70,9 +67,9 @@ class GoogleSpider(RedisSpider):
         data_json = json.loads(data)
         data = data_json['value']
         if data_json['user']:
-            self.user_pk = data_json['user']
+            self.user_pk.append(data_json['user'])
         else:
-            self.user_pk = -1
+            self.user_pk.append(-1)
         self.search_phrase.append(data)
 
         return self.make_requests_from_url('https://www.google.com.ua/search?q=' + data + '&tbm=isch')

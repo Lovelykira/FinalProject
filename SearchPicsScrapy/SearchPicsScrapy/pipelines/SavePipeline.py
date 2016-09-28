@@ -70,6 +70,10 @@ class DBWriterPipeline(object):
         @param item: current Task item.
         @return: True if the search is finished; False - otherwise.
         """
+        print("===================")
+        print(spider.num_items, self.items_processed[spider.name] == spider.num_items)
+        print("===================")
+
         return self.items_processed[spider.name] == spider.num_items or 'error' in item.keys()
 
     def process_item(self, item, spider):
@@ -84,24 +88,34 @@ class DBWriterPipeline(object):
         @return: item
         """
         search_phrase = spider.search_phrase[0]
+        user_pk = spider.user_pk[0]
         self.items_processed[spider.name] += 1
         logging.log(logging.INFO, "Pipeline processing {} of {}. Item #{}".format(search_phrase, spider.search_phrase,
                                                                                 self.items_processed))
+        logging.log(logging.INFO, "Pipeline processing fo user {} of {}.".format(user_pk, spider.user_pk))
 
         item = dict(item)
-        task = self.get_task(search_phrase, spider.user_pk, spider.name)
+        task = self.get_task(search_phrase, user_pk, spider.name)
 
         if not 'error'in item.keys():
             self.save_result(item, spider, task)
 
+        print("===================")
+        print("no error")
+        print("===================")
+
         if self.search_finished(spider, item):
+            print("===================")
+            print("run")
+            print("===================")
             run(search_phrase, task.user)
             spider.search_phrase = spider.search_phrase[1:]
+            spider.user_pk = spider.user_pk[1:]
 
             self.items_processed[spider.name] = 0
             cur_status = FINISHED
             TasksItem.django_model.objects.filter(pk=task.pk).update(status=cur_status)
-            logging.log(logging.DEBUG, "Pipeline processing {}. FINISHED".format(search_phrase))
+            logging.log(logging.DEBUG, "Pipeline processing {} for user {}. FINISHED".format(search_phrase, user_pk))
         return item
 
 
@@ -116,6 +130,6 @@ def run(search_phrase, user):
     else:
         user_id = -1
     r = redis.StrictRedis(host='localhost', port=6379, db=0)
-    message =  json.dumps({'search_phrase':search_phrase, 'user_id':user_id})
-    r.publish('our-channel',message)
+    message = json.dumps({'search_phrase':search_phrase, 'user_id':user_id, 'was_searched_before':False})
+    r.publish('our-channel', message)
     logging.log(logging.INFO, "Pipeline sent message({}) to webserver".format(message))
