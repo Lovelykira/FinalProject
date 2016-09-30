@@ -5,4 +5,4 @@
 /**/*.log
 /**/*.pid
 /**/local_settings.py
-/**/dump.rdb
+/**/*.rdb

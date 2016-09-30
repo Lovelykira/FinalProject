@@ -9,6 +9,7 @@ class Tasks(models.Model):
     keyword = models.CharField(max_length=500)
     date = models.DateField(auto_now=True)
     user = models.ForeignKey(User, null=True)
+    task_number = models.PositiveIntegerField(default=0)
 
 
 class Results(models.Model):
@@ -16,3 +17,4 @@ class Results(models.Model):
     link = models.CharField(max_length=2048)
     img = models.CharField(max_length=2048)
     rank = models.PositiveIntegerField()
+

@@ -6,11 +6,15 @@
                 <div class="row"><a href="/" class="btn btn-primary btn-sm"> <--BACK</a></div>
                 <div class="row">
                     <div class="col-md-12 all-pics">
-                        {% for pic in pics %}
-                            <div class="pic-container">
-                                <span class="helper"></span><a href={{pic.link}}"> <img src={{pic.img}} ></a>
-                            </div>
-                        {%endfor%}
+                        {% if pics|length > 0 %}
+                            {% for pic in pics %}
+                                <div class="pic-container">
+                                    <span class="helper"></span><a href={{pic.link}}"> <img src={{pic.img}} ></a>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            Sorry. No results found.
+                        {% endif %}
                     </div>
                 </div>
             </div>

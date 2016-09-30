@@ -4,24 +4,43 @@ from autobahn.asyncio.websocket import WebSocketServerProtocol, \
 import logging
 import json
 
-users = {}
+
 logging.basicConfig(level=logging.DEBUG)
+SPIDERS = ['google', 'yandex', 'instagram']
+START_STATUS = "IN_PROGRESS"
+FINISHED = "FINISHED"
+CLIENTS = {}
 
 
 class MyServerProtocol(WebSocketServerProtocol):
 
     def onConnect(self, request):
         """
-        When client connects this method updates global users
+        When client connects this method updates saves.
+
         @param request: 
         @return: 
         """
         logging.info("Client connecting: {0}".format(request.peer))
-        self.user_id = request.params['user_id'][0]
-        logging.info("Client user id: {0}".format(self.user_id))
-        global users
-        users[str(self.user_id)] = self
-        logging.info("user messages: {0}".format(users))
+       # self.user_id = request.params['user_id'][0]
+        logging.info("Client user id: {0}".format(request.params['user_id'][0]))
+
+    def onMessage(self, payload, isBinary):
+        """
+        When client sends the task_number that was requested, function appends class instance to global CLIENTS dict by
+        task_number as key.
+
+        :param payload: input message - requested task number
+        :param isBinary:
+        :return:
+        """
+        logging.info("NEW MESSAGE "+repr(payload.decode('utf8')))
+        task_number = payload.decode('utf8')
+        if task_number in CLIENTS.keys():
+            CLIENTS[task_number].append(self)
+        else:
+            CLIENTS[task_number] = [self, ]
+        logging.info("MESSAGES" + repr(CLIENTS))
 
 
     def onOpen(self):
@@ -51,7 +70,8 @@ def main():
     @asyncio.coroutine
     def redis_subscriber():
         """
-        The function that subscribes to redis channel and waits for messages. Once one appear the function stores sends it to Web client
+        The function that subscribes to redis channel and waits for messages. Once one appears the function checks the
+        task_number, stored in it and sends right search_phrase to each Web client that waits for it.
         @return:
         """
         # Create connection
@@ -70,14 +90,12 @@ def main():
             reply = json.loads(reply.value)
             user_id = str(reply['user_id'])
             value = repr(reply['search_phrase'])
-            was_searched_before = reply['was_searched_before']
-            logging.info('user_id: {} value: {}'.format(str(user_id), repr(value)))
-
-            res_message = {'search_phrase':value, 'was_searched_before':was_searched_before}
-            users[user_id].sendMessage(json.dumps(res_message).encode('utf8'))
+            task_number = str(reply['task_number'])
+            res_message = json.dumps({'search_phrase':value}).encode('utf8')
+            logging.info('clients[task_number]:{}'.format(CLIENTS[task_number]))
+            for client in CLIENTS[task_number]:
+                client.sendMessage(res_message)
             logging.info('Sent message to client')
-           # users[user_id].append(res_message)
-            logging.info('users[user_id]: {}'.format(users[user_id]))
 
         # When finished, close the connection.
         connection.close()

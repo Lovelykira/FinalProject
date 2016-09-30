@@ -19,7 +19,11 @@
                 {% for task in tasks %}
                      <div class="row">
                          <div class="col-md-6 task_name">
-                             <a href="/search/{{task.keyword}}" class="task">{{task.keyword}}</a>
+                             {% if user.is_authenticated %}
+                                <a href="/search/{{user.id}}/{{task.keyword}}" class="task">{{task.keyword}}</a>
+                             {% else %}
+                                <a href="/search/anonymous/{{task.keyword}}" class="task">{{task.keyword}}</a>
+                             {% endif %}
                          </div>
                          <div class="col-md-6 task_progress">
                              <div class="progressbar 50 ui-progressbar ui-corner-all ui-widget ui-widget-content {{task.keyword}}" style="height:30px;" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
@@ -31,8 +35,8 @@
                 </div>
                 <div class="col-md-3"></div>
             </div>
-            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

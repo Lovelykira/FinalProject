@@ -33,17 +33,17 @@ class DBWriterPipeline(object):
 
     def get_task(self, keyword, user_id, spider_name):
         """
-        The method that returns Task object for current user and search phrase.
+        The method that returns Task object for current user and search phrase from current spider.
 
         @param keyword: str.
         @param user_id: current user id or None for anonymous user.
+        @param spider_name: Spider object - current spider.
         @return: Task object.
         """
         if user_id != -1:
-            task = TasksItem.django_model.objects.get(keyword=keyword, user_id=user_id, site=spider_name)
+            return TasksItem.django_model.objects.get(keyword=keyword, user_id=user_id, site=spider_name)
         else:
-            task = TasksItem.django_model.objects.get(keyword=keyword, user=None, site=spider_name)
-        return task
+            return TasksItem.django_model.objects.get(keyword=keyword, user=None, site=spider_name)
 
     def save_result(self, item, spider, task):
         """
@@ -66,14 +66,11 @@ class DBWriterPipeline(object):
         The method that checks if the search is over.
         It is over when the pipeline processed a number of items equal to spider.num_items or if error occurred
         during parse.
+
         @param spider: Spider object.
         @param item: current Task item.
         @return: True if the search is finished; False - otherwise.
         """
-        print("===================")
-        print(spider.num_items, self.items_processed[spider.name] == spider.num_items)
-        print("===================")
-
         return self.items_processed[spider.name] == spider.num_items or 'error' in item.keys()
 
     def process_item(self, item, spider):
@@ -100,15 +97,8 @@ class DBWriterPipeline(object):
         if not 'error'in item.keys():
             self.save_result(item, spider, task)
 
-        print("===================")
-        print("no error")
-        print("===================")
-
         if self.search_finished(spider, item):
-            print("===================")
-            print("run")
-            print("===================")
-            run(search_phrase, task.user)
+            run(search_phrase, task.user, task.task_number)
             spider.search_phrase = spider.search_phrase[1:]
             spider.user_pk = spider.user_pk[1:]
 
@@ -119,9 +109,9 @@ class DBWriterPipeline(object):
         return item
 
 
-def run(search_phrase, user):
+def run(search_phrase, user, task_number):
     """
-    The function that publishes json that contains the search phrase and user_id to redis channel.
+    The function that publishes json that contains the search phrase, user_id and task_number to redis channel.
 
     @param search_phrase: str
     """
@@ -130,6 +120,6 @@ def run(search_phrase, user):
     else:
         user_id = -1
     r = redis.StrictRedis(host='localhost', port=6379, db=0)
-    message = json.dumps({'search_phrase':search_phrase, 'user_id':user_id, 'was_searched_before':False})
+    message = json.dumps({'search_phrase':search_phrase, 'user_id':user_id,'task_number':task_number})
     r.publish('our-channel', message)
     logging.log(logging.INFO, "Pipeline sent message({}) to webserver".format(message))

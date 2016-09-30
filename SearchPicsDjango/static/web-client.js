@@ -18,14 +18,8 @@
        if (typeof e.data == "string") {
 
            data = JSON.parse(e.data);
-           console.log(data['was_searched_before']);
            console.log(data);
            search_phrase = data['search_phrase'].slice(1, -1);
-           if (data['was_searched_before']){
-                var value = 100;
-           }
-           else
-                var value = 33;
 
            var search_phrase_normalized = search_phrase;
            if (search_phrase.indexOf(" ")!= -1){
@@ -48,9 +42,13 @@
                 var newTaskCol = $("<div />", {class: "col-md-6 task_name"}).appendTo(newRow)
                 var newProgressCol = $("<div />", {class: "col-md-6 task_progress"}).appendTo(newRow)
 
+                if (user_id == -1){
+                    user_id = "anonymous"
+                }
+
                 var newLink = $("<a />", {
                     name : "link",
-                    href : "/search/"+search_phrase,
+                    href : "/search/"+user_id+"/"+search_phrase,
                     text : search_phrase,
                     class : "task",
                     id: data['search_phrase']
@@ -59,7 +57,7 @@
                 var newProgressBar = $("<div />",{class:"progressbar "+search_phrase, style:"height:30px;"}).appendTo(newProgressCol);
                 $( ".progressbar."+search_phrase_normalized ).progressbar({
                     max:100,
-                    value: value,
+                    value: 33,
                 });
 
 
@@ -76,7 +74,21 @@
     function post(e){
         $.ajax({type: "POST",
                 url: "/",
-                data: {"search": $(".search").val()}
+                data: {"search": $(".search").val()},
+                success: function(response) {
+                    console.log(response);
+                    response = JSON.parse(response);
+                    if (response.hasOwnProperty('task_number')){
+                        socket.send(response['task_number']);
+                        console.log("Sent to server");
+                    }
+                    else if (response.hasOwnProperty('search_phrase')){
+                        if (user_id == -1){
+                            user_id = "anonymous"
+                        }
+                        document.location = '/search/'+user_id+"/"+response['search_phrase'];
+                    }
+                }
                 });
         $(".search").val("");
         }
