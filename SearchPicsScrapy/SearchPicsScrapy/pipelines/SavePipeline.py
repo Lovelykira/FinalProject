@@ -119,7 +119,7 @@ def run(search_phrase, user, task_number):
         user_id = user.id
     else:
         user_id = -1
-    r = redis.StrictRedis(host='localhost', port=6379, db=0)
+    r = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
     message = json.dumps({'search_phrase':search_phrase, 'user_id':user_id,'task_number':task_number})
     r.publish('our-channel', message)
     logging.log(logging.INFO, "Pipeline sent message({}) to webserver".format(message))
