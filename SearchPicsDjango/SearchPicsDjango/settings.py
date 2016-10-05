@@ -22,6 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'n90n^43gyf5&ig3pb88vxfuom)k0w=35p20jar%ml(v4*m!(b3'
 
+#import django
+#django.setup()
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,8 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'main',
 ]
+
+#import django
+#django.setup()
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -150,10 +157,11 @@ if DEBUG:
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 try:
     from .local_settings import *
-except:
+except ImportError:
     pass

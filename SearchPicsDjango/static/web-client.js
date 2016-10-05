@@ -7,7 +7,9 @@
        user_id = document.getElementById('user_id').value;
        }
 
-    socket = new WebSocket("ws://172.16.207.30:9000?user_id="+user_id.toString());
+//    socket = new WebSocket("ws://127.0.0.1:9000/?user_id="+user_id.toString());
+     socket = new WebSocket("ws://" + window.location.host + "/ws?user_id="+user_id.toString());
+
 
     socket.onopen = function() {
        console.log("Connected!");

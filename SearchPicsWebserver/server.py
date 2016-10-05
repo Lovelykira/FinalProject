@@ -59,7 +59,7 @@ def main():
         # Trollius >= 0.3 was renamed
         import trollius as asyncio
 
-    factory = WebSocketServerFactory(u"ws://172.16.207.30:9000")
+    factory = WebSocketServerFactory(u"ws://127.0.0.1:9000")
     factory.protocol = MyServerProtocol
 
     loop = asyncio.get_event_loop()
