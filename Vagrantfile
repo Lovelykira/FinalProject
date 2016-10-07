@@ -12,8 +12,9 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   config.vm.box = "ubuntu/trusty64"
-  config.vm.network "forwarded_port", guest: 80, host: 8002
+  config.vm.network "forwarded_port", guest: 80, host: 8003
   config.vm.provision "shell", inline: "/vagrant/provision.sh"
 
   # Disable automatic box update checking. If you disable this, then

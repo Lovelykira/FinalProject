@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 echo "****** Provisioning virtual machine... ******"
 cd /vagrant
+export DEBIAN_FRONTEND=noninteractive
 sudo apt-get --assume-yes install git
 sudo apt-get --assume-yes install redis-server
 sudo apt-get --assume-yes install python-virtualenv
@@ -24,19 +25,61 @@ cd FinalProject/SearchPicsDjango
 virtualenv -p python3 .env
 . .env/bin/activate
 pip install -r requirements.txt
+deactivate
 echo "****** Creating virtualenv for Scrapy... ******"
 cd ../SearchPicsScrapy
 virtualenv -p python2 .env
+. .env/bin/activate
 pip install -r requirements.txt
+deactivate
 echo "****** Creating virtualenv for Web... ******"
 cd ../SearchPicsWebserver
 virtualenv -p python3 .env
+. .env/bin/activate
 pip install -r requirements.txt
+deactivate
 cd ../supervisord
 mkdir log
 #sudo service nginx start
 #cd /vagrant/FinalProject
 #supervisord -c supervisord.conf
 echo "****** Configurating nginx and uwsi... ******"
-ln -s /vagrant/FinalProject/SearchPics_nginx /etc/nginx/sites-enabled/SearchPicsDjango
-cp /vagrant/FinalProgect/SearchPics_uwsgi.ini /etc/uwsgi/apps-available/SearchPicsDjango.ini
+ln -s /vagrant/FinalProject/SearchPics_nginx /etc/nginx/sites-enabled/SearchPics_nginx
+cp /vagrant/FinalProject/SearchPics_uwsgi.ini /etc/uwsgi/apps-available/SearchPicsDjango.ini
+cp /vagrant/FinalProject/uwsi_params /vagrant/uwsgi_params
+rm /etc/nginx/nginx.conf
+cp ../nginx.conf /etc/nginx/nginx.conf
+mkdir /vagrant/log
+touch /vagrant/log/nginx.access.log
+touch /vagrant/log/nginx.error.log
+echo "****** Creating db... ******"
+sudo -u postgres psql -c 'CREATE DATABASE spiderdb;'
+sudo -u postgres psql -c "CREATE USER kira WITH password '123';"
+sudo -u postgres psql -c 'GRANT ALL privileges ON DATABASE spiderdb TO kira;'
+echo "****** Django setup... ******"
+cd /vagrant/FinalProject/SearchPicsDjango
+. .env/bin/activate
+cat > SearchPicsDjango/local_settings.py <<EOF
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.postgresql_psycopg2',
+'NAME': 'spiderdb',
+'USER': 'kira',
+'PASSWORD': '123',
+'HOST': 'localhost', # Set to empty string for localhost.
+'PORT': '', # Set to empty string for default.
+}
+}
+EOF
+python manage.py migrate
+python manage.py collectstatic --noinput
+deactivate
+cp -f /vagrant/FinalProject/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#sudo start supervisord
+#sudo service supervisord start
+#supervisord -c /etc/supervisor/supervisord.conf
+#supervisorctl start all
+#sudo service supervisor start 
+sudo supervisord
+sudo supervisorctl reload
+sudo service nginx restart
