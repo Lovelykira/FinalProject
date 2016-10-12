@@ -14,7 +14,7 @@ class InstagramSpider(RedisSpider):
     def __init__(self, search=""):
         super(InstagramSpider, self).__init__()
         self.search_phrase = []
-        self.num_items = 10
+        self.num_items = 3
         self.user_pk = []
 
     def parse(self, response):

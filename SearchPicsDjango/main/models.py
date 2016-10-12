@@ -8,6 +8,7 @@ class Tasks(models.Model):
     site = models.CharField(max_length=100)
     keyword = models.CharField(max_length=500)
     date = models.DateField(auto_now=True)
+    time = models.TimeField(auto_now=True)
     user = models.ForeignKey(User, null=True)
     task_number = models.PositiveIntegerField(default=0)
 

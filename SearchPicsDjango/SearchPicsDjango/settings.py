@@ -10,6 +10,27 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+from __future__ import absolute_import
+BROKER_URL = 'redis://localhost:6379'
+CELERY_TIMEZONE = 'Europe/Kiev'
+#BROKER_URL = 'redis+socket:///tmp/redis.sock'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+from celery.schedules import crontab
+#from .. import celery_demon
+
+
+CELERYBEAT_SCHEDULE = {
+    'del-every-day': {
+        'task': 'celery_demon.tasks.del_old_queries',
+        'schedule': crontab(minute=0, hour=12),
+      #  'args': (16, 16),
+    },
+}
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -37,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'celery_demon',
     'main',
 ]
 
@@ -100,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
@@ -157,3 +179,5 @@ try:
     from .local_settings import *
 except:
     pass
+
+

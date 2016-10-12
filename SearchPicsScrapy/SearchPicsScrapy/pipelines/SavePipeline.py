@@ -11,6 +11,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SearchPicsDjango.settings")
 import django
 django.setup()
 
+from celery_demon.tasks import upload_photo
+
 from main.models import Tasks, Results
 
 FINISHED = "FINISHED"
@@ -60,6 +62,10 @@ class DBWriterPipeline(object):
             result['img'] = img
             result['rank'] = self.items_processed[spider.name]
             result.save()
+
+            print("upload before")
+            upload_photo.delay(img, str(spider.user_pk))
+            print("upload after")
 
     def search_finished(self, spider, item):
         """

@@ -11,9 +11,18 @@ import re
 import json
 import redis
 import logging
+import requests
+
+from django.conf import settings
+from io import StringIO, BytesIO
+import zipfile
+import glob
+import os
 
 from .models import Results, Tasks
 from .forms import LoginForm, RegistrationForm
+
+#from celery_demon.tasks import download_photos
 
 SPIDERS = ['google', 'yandex', 'instagram']
 START_STATUS = "IN_PROGRESS"
@@ -192,6 +201,7 @@ class MainView(TemplateView):
         else:
             user = None
         finished_tasks = self.get_finished_tasks(user)
+
         return render(request, 'index.html', {'tasks':finished_tasks})
 
 
@@ -221,3 +231,164 @@ class RegisterView(FormView):
         user = form.save()
         login(self.request, user)
         return HttpResponseRedirect('/')
+
+
+class Authorize(View):
+    def get(self, request):
+        return HttpResponseRedirect('https://oauth.yandex.ru/authorize?response_type=code&client_id=28b5af656ea54530aa225aeb66123129&force_confirm=yes')
+
+
+class Verification(View):
+    def get(self, request):
+
+
+
+        r = requests.post('https://oauth.yandex.ru/token', data={'grant_type':'authorization_code','code':str(request.GET.get('code', '')),
+                                                                 'client_id':'28b5af656ea54530aa225aeb66123129', 'client_secret':'cb7fe3ba115f45ccbe35e391fc0d187d'})
+
+        if 'access_token' in r.json().keys():
+            access_token = r.json()['access_token']
+            stri = "min=" + str(int(r.json()['expires_in'])/60) + " hours=" + str(int(r.json()['expires_in'])/360)
+           # return HttpResponse(stri)
+            return HttpResponseRedirect('/upload_to_yandex_drive/'+access_token)
+        else:
+            return HttpResponseRedirect('/authorize/')
+
+
+def UploadToYandexDrive(request, token):
+    # resp = send_file(request)
+    # return HttpResponse(resp.content)
+
+
+    # if not request.user.is_authenticated():
+    #     user = "[-1]"
+    # else:
+    #     user = '['+str(request.user.pk)+']'
+    #
+    # download_photos(user)
+    # path = settings.PIC_DIR+user+'/'
+    #
+    # filenames = os.listdir(path)
+    # zip_subdir = "files"
+    # zip_filename = "%s.zip" % zip_subdir
+    #
+    # s = BytesIO()
+    # zf = zipfile.ZipFile(s, "w")
+    #
+    # for fpath in filenames:
+    #     zip_path = os.path.join(zip_subdir, fpath)
+    #     zf.write(path+fpath, zip_path)
+    # zf.close()
+
+
+   # filepath = settings.PIC_DIR + '[-1]/http:im3-tub-ua.yandex.neti?id=9b6fec984f9d943dcd9a1527b4cc2488&amp;n=33&amp;h=215&amp;w=220'
+    filepath='/home/user/Projects/[-1].tar.gz'
+
+    with open(filepath, 'rb') as fh:
+
+        mydata='hello'
+        import hashlib
+        hash_object = hashlib.sha256(mydata.encode('utf-8'))
+        hex_dig = hash_object.hexdigest()
+        response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path=b', headers={'Authorization': 'OAuth ' +token})
+
+        if 'href' in response.json():
+            href = response.json()['href']
+        else:
+            href = response.json()
+       # response2 = requests.post(href, files=files, headers={'Authorization': 'OAuth ' +token})
+        response2 = requests.put(href,
+                                 data=fh,
+                                 headers={'Authorization': 'OAuth ' +token})
+
+
+
+
+       # response = requests.put('https://webdav.yandex.ru/filename.conf',
+        #                        data=mydata,
+       #                         headers={'Content-Type': 'application/binary', 'Authorization': 'OAuth ' +token, 'Content-Length':str(os.path.getsize(filepath)),
+        #                                 'Sha256': hex_dig,})
+
+
+    return HttpResponse(token + "++++++++++++" +response.text + "++++++++++++" + hex_dig+ "++++++++++++++++++++++"+response2.text)
+
+
+
+
+def download_photos(user):
+    import boto
+    from django.conf import settings
+    import os
+    print("downloading")
+    conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
+    bucket_name = settings.AWS_STORAGE_BUCKET_NAME
+    bucket = conn.get_bucket(bucket_name)
+    path = ""
+    for key in bucket.list():
+        print(key)
+        if user == key.name.split("/")[0] and key.name.split("/")[1]!="":
+             path = settings.PIC_DIR + user + "/"
+             print(user,path)
+             os.makedirs(path, exist_ok=True)
+             key.get_contents_to_filename( path + (key.name.split("/")[1]))
+  #  to_zip (path, user)
+
+
+# def to_zip(src, dst):
+#     zf = zipfile.ZipFile(settings.PIC_DIR+ dst+'.zip', 'w', zipfile.ZIP_DEFLATED)
+#     abs_src = os.path.abspath(src)
+#     for dirname, subdirs, files in os.walk(src):
+#         for filename in files:
+#             absname = os.path.abspath(os.path.join(dirname, filename))
+#             arcname = absname[len(abs_src) + 1:]
+#             print('zipping %s as %s' % (os.path.join(dirname, filename),
+#                                   arcname))
+#             zf.write(absname, arcname)
+#     zf.close()
+
+
+
+def send_file(request):
+    if not request.user.is_authenticated():
+        user = "[-1]"
+    else:
+        user = '['+str(request.user.pk)+']'
+
+    download_photos(user)
+    path = settings.PIC_DIR+user+'/'
+
+    filenames = os.listdir(path)
+    zip_subdir = "files"
+    zip_filename = "%s.zip" % zip_subdir
+
+    s = BytesIO()
+    zf = zipfile.ZipFile(s, "w")
+
+    for fpath in filenames:
+        zip_path = os.path.join(zip_subdir, fpath)
+        zf.write(path+fpath, zip_path)
+    zf.close()
+
+
+    resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
+    resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
+
+    return resp
+
+
+# def send_file(request):
+#   import os, tempfile, zipfile
+#   from wsgiref.util import FileWrapper
+#   from django.conf import settings
+#   import mimetypes
+#
+#   filename     = settings.PIC_DIR+'None.zip' # Select your file here.
+#   download_name ="example.zip"
+#   wrapper      = FileWrapper(open(filename))
+#   content_type = mimetypes.guess_type(filename)[0]
+#   response     = HttpResponse(wrapper,content_type=content_type)
+#   response['Content-Length']      = os.path.getsize(filename)
+#   response['Content-Disposition'] = "attachment; filename=%s"%download_name
+#   return response
+
+
