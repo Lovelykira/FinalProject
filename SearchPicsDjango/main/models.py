@@ -19,3 +19,9 @@ class Results(models.Model):
     img = models.CharField(max_length=2048)
     rank = models.PositiveIntegerField()
 
+
+class UserToken(models.Model):
+    user = models.ForeignKey(User, null=True)
+    uuid = models.CharField(max_length=500)
+    token = models.CharField(max_length=500)
+    expire_time = models.DateTimeField()

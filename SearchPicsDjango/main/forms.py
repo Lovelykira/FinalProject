@@ -10,8 +10,6 @@ class LoginForm(forms.Form):
 
     def clean(self):
         if not self.errors:
-            print(self.cleaned_data.get('username'))
-            print(self.cleaned_data.get('password'))
             user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
             if user is None:
                 raise forms.ValidationError(u'Пользователя с таким именем и паролем не существует.')

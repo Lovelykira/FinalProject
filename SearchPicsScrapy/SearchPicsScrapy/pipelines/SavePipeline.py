@@ -11,7 +11,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SearchPicsDjango.settings")
 import django
 django.setup()
 
-from celery_demon.tasks import upload_photo
+from celery_demon.tasks import upload_photo_to_aws
 
 from main.models import Tasks, Results
 
@@ -49,7 +49,7 @@ class DBWriterPipeline(object):
 
     def save_result(self, item, spider, task):
         """
-        The method that saves the result of the search to database.
+        The method that saves the result of the search to database and uploads picture to aws s3.
 
         @param item: item, returned by spider's parse() method.
         @param spider: Spider object.
@@ -62,10 +62,8 @@ class DBWriterPipeline(object):
             result['img'] = img
             result['rank'] = self.items_processed[spider.name]
             result.save()
+            upload_photo_to_aws.delay(img, str(spider.user_pk), spider.search_phrase[0])
 
-            print("upload before")
-            upload_photo.delay(img, str(spider.user_pk))
-            print("upload after")
 
     def search_finished(self, spider, item):
         """

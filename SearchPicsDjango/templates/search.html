@@ -3,7 +3,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 main">
-                <div class="row"><a href="/" class="btn btn-primary btn-sm"> <--BACK</a></div>
+                    <div class="row"><a href="/authorize/?keyword={{keyword}}">Upload to Yandex Disk</a></div>
+                <div class="row">
+                    {% if user.is_authenticated %}
+                        <a href="/download/{{user.id}}/{{keyword}}/">Download Zip File</a>
+                    {% else %}
+                        <a href="/download/-1/{{keyword}}/">Download Zip File</a>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <a href="/" class="btn btn-primary btn-sm"> <--BACK</a></div>
                 <div class="row">
                     <div class="col-md-12 all-pics">
                         {% if pics|length > 0 %}

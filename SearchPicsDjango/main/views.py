@@ -6,23 +6,22 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
-from datetime import datetime, timedelta
 import re
 import json
 import redis
 import logging
 import requests
+import boto
+import zipfile
+import os
 
 from django.conf import settings
 from io import StringIO, BytesIO
-import zipfile
-import glob
-import os
+from datetime import datetime, timedelta
+from xml.dom import minidom
 
-from .models import Results, Tasks
+from .models import Results, Tasks, UserToken
 from .forms import LoginForm, RegistrationForm
-
-#from celery_demon.tasks import download_photos
 
 SPIDERS = ['google', 'yandex', 'instagram']
 START_STATUS = "IN_PROGRESS"
@@ -32,11 +31,34 @@ logger = logging.getLogger(__name__)
 
 
 def byRank(item):
+    """
+    Key to sort Result objects.
+    :param item: Result object.
+    :return:
+    """
     return item.rank
 
 
 def byID(item):
+    """
+    Key to sort Task objects.
+    :param item: Task object.
+    :return:
+    """
     return item.id
+
+
+def normalize_value(value):
+    """
+    The function that deletes all symbols from the string except digits, letters and spaces. Also it cuts all spaces
+    in the beginning and at the end of the string.
+
+    @param value: the search phrase that should be normalized.
+    @return: normalized string.
+    """
+    q = re.compile(r'[^a-zA-Z0-9_ ]')
+    res = q.sub('', value)
+    return res.strip()
 
 
 class SearchView(TemplateView):
@@ -52,13 +74,12 @@ class SearchView(TemplateView):
         Gets all results for current user by his search phrase and sorts them by rank.
         """
         if kwargs['id'] != "anonymous":
-            tasks = Tasks.objects.filter(keyword=kwargs['phrase'], user_id=str(kwargs['id']))
+            tasks = Tasks.objects.filter(keyword=kwargs['keyword'], user_id=str(kwargs['id']))
         else:
-            tasks = Tasks.objects.filter(keyword=kwargs['phrase'], user=None)
+            tasks = Tasks.objects.filter(keyword=kwargs['keyword'], user=None)
         pics = Results.objects.filter(task__in=tasks)
         pics = sorted(pics, key=byRank)
-        return render(request, 'search.html', {'pics':pics})
-
+        return render(request, 'search.html', {'pics':pics, 'keyword':kwargs['keyword']})
 
 
 class MainView(TemplateView):
@@ -132,18 +153,6 @@ class MainView(TemplateView):
         task.save()
         Results.objects.filter(task=task).delete()
 
-    def normalize_value(self, value):
-        """
-        The function that deletes all symbols from the string except digits, letters and spaces. Also it cuts all spaces
-        in the beginning and at the end of the string.
-
-        @param value: the search phrase that should be normalized.
-        @return: normalized string.
-        """
-        q = re.compile(r'[^a-zA-Z0-9_ ]')
-        res = q.sub('', value)
-        return res.strip()
-
     def post(self, request, *args, **kwargs):
         """
         POST method.
@@ -151,16 +160,15 @@ class MainView(TemplateView):
         The function creates a new Task or gets an existing one for current user, his search phrase and the reserched site.
         If the Task is created or older than one day, the spiders_search method is called.
         """
-
         if request.user.is_authenticated():
             user = request.user
             user_pk = request.user.pk
         else:
             user = None
             user_pk = -1
-        value = self.normalize_value(request.POST.get('search', ""))
+        value = normalize_value(request.POST.get('search', ""))
         if value == "":
-            return HttpResponse("-1")
+            return HttpResponseRedirect("/")
 
         task_number = self.generate_task_number()
         r = redis.StrictRedis()
@@ -189,7 +197,6 @@ class MainView(TemplateView):
             logger.debug("({}) already in database".format(value))
             return HttpResponse(json.dumps({'search_phrase':value}))
 
-
     def get(self, request, *args, **kwargs):
         """
         GET method.
@@ -203,7 +210,6 @@ class MainView(TemplateView):
         finished_tasks = self.get_finished_tasks(user)
 
         return render(request, 'index.html', {'tasks':finished_tasks})
-
 
 
 class LoginView(FormView):
@@ -235,160 +241,173 @@ class RegisterView(FormView):
 
 class Authorize(View):
     def get(self, request):
-        return HttpResponseRedirect('https://oauth.yandex.ru/authorize?response_type=code&client_id=28b5af656ea54530aa225aeb66123129&force_confirm=yes')
+        """
+        GET method.
+
+        The function that redirects to oauth.yandex for user to confirm allowing access to account.
+        :param request:
+        :return: HttpResponseRedirect to oauth.yandex with parameters response_type='code', client_id=registered app client id
+        and force_confirm='yes'.
+        """
+        if request.user.is_authenticated():
+            user = request.user
+        else:
+            user = None
+        try:
+            ut = UserToken.objects.get(user=user, uuid=request.sessions.get('uuid', ''))
+            if ut.expire_time >= datetime.now():
+                return HttpResponseRedirect('/upload_to_yandex_drive/' + '?keyword=' + request.GET.get('keyword', ''))
+        except: #finally
+            return HttpResponseRedirect('https://oauth.yandex.ru/authorize?response_type=code&client_id={}&force_confirm=yes&state={}'.format(settings.YANDEX_APP_CLIENT_ID, request.GET.get('keyword', '')))
 
 
 class Verification(View):
     def get(self, request):
+        """
+        GET method.
 
-
-
+        This view maintains the callback ulr from oauth.yandex. Verification code was sent as 'code' parameter.
+        This function posts this code and app's client id and password to oauth.yandex/token to get access_token and then
+        if everything went ok, redirects to /upload_to_yandex_drive/.
+        :param request:
+        :return: HttpResponseRedirect to /upload_to_yandex_drive/ if everything went ok and
+                HttpResponseRedirect to /authorize/ if access token wasn't sent for some reason.
+        """
+        keyword = request.GET.get('state', '')
         r = requests.post('https://oauth.yandex.ru/token', data={'grant_type':'authorization_code','code':str(request.GET.get('code', '')),
-                                                                 'client_id':'28b5af656ea54530aa225aeb66123129', 'client_secret':'cb7fe3ba115f45ccbe35e391fc0d187d'})
+                                                                 'client_id':settings.YANDEX_APP_CLIENT_ID, 'client_secret':settings.YANDEX_APP_CLIENT_PASS})
 
-        if 'access_token' in r.json().keys():
+        if request.user.is_authenticated():
+            user = request.user
+        else:
+            user = None
+
+        if 'access_token' in r.json().keys() and 'expires_in' in r.json().keys():
             access_token = r.json()['access_token']
-            stri = "min=" + str(int(r.json()['expires_in'])/60) + " hours=" + str(int(r.json()['expires_in'])/360)
-           # return HttpResponse(stri)
-            return HttpResponseRedirect('/upload_to_yandex_drive/'+access_token)
+            UserToken.objects.create(user=user, uuid=request.session.get('uuid', ''), token=access_token, expire_time=datetime.now()+timedelta(seconds=r.json()['expires_in']))
+
+            return HttpResponseRedirect('/upload_to_yandex_drive/' + '?keyword=' + keyword)
         else:
             return HttpResponseRedirect('/authorize/')
 
 
-def UploadToYandexDrive(request, token):
-    # resp = send_file(request)
-    # return HttpResponse(resp.content)
+def upload_to_YandexDrive(request):
+    """
+    This function uploads pictures to YandexDrive.
+
+    First it's downloading pictures from AWS S3 and then uploads it one by one to user's yandex disk using access_token.
+    Notice that if file was created earlier it will not be overwritten.
+    :param request:
+    :param token: access token, which has been gotten in Verification view.
+    :return: HttpResponseRedirect to previous page - /search/user_id/keyword/
+    """
 
 
-    # if not request.user.is_authenticated():
-    #     user = "[-1]"
-    # else:
-    #     user = '['+str(request.user.pk)+']'
-    #
-    # download_photos(user)
-    # path = settings.PIC_DIR+user+'/'
-    #
-    # filenames = os.listdir(path)
-    # zip_subdir = "files"
-    # zip_filename = "%s.zip" % zip_subdir
-    #
-    # s = BytesIO()
-    # zf = zipfile.ZipFile(s, "w")
-    #
-    # for fpath in filenames:
-    #     zip_path = os.path.join(zip_subdir, fpath)
-    #     zf.write(path+fpath, zip_path)
-    # zf.close()
+    if request.user.is_authenticated():
+        user = "[{}]".format(request.user.pk)
+        user_pk = request.user
+    else:
+        user = "[-1]"
+        user_pk = None
+    keyword = request.GET.get('keyword', '')
+    download_photos_from_aws(user, keyword)
+
+    ut = UserToken.objects.get(user=user_pk, uuid=request.session.get('uuid', ''))
+    token = ut.token
+
+    r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
+                         headers={'Authorization': 'OAuth ' + token, 'depth':'1'})
+    xmldoc = minidom.parseString(r.text)
+    itemlist = xmldoc.getElementsByTagName('d:displayname')
+    yandex_filenames = []
+    for child in itemlist:
+        yandex_filenames.append(str(child.firstChild.nodeValue))
 
 
-   # filepath = settings.PIC_DIR + '[-1]/http:im3-tub-ua.yandex.neti?id=9b6fec984f9d943dcd9a1527b4cc2488&amp;n=33&amp;h=215&amp;w=220'
-    filepath='/home/user/Projects/[-1].tar.gz'
+    path = settings.PIC_DIR + user + "/" + keyword + '/'
+    filenames = os.listdir(path)
+    filenames = [path+filename for filename in filenames]
 
-    with open(filepath, 'rb') as fh:
+    for filepath in filenames:
+        with open(filepath, 'rb') as fh:
+            filepath = normalize_value(filepath)
+            i=1
+            while True:
+                if filepath in yandex_filenames:
+                    filepath = "{} ({})".format(filepath, i)
+                else:
+                    break
+            response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path='+filepath, headers={'Authorization': 'OAuth ' +token})
 
-        mydata='hello'
-        import hashlib
-        hash_object = hashlib.sha256(mydata.encode('utf-8'))
-        hex_dig = hash_object.hexdigest()
-        response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path=b', headers={'Authorization': 'OAuth ' +token})
+            if 'href' in response.json():
+                href = response.json()['href']
+            else:
+                continue
 
-        if 'href' in response.json():
-            href = response.json()['href']
-        else:
-            href = response.json()
-       # response2 = requests.post(href, files=files, headers={'Authorization': 'OAuth ' +token})
-        response2 = requests.put(href,
-                                 data=fh,
-                                 headers={'Authorization': 'OAuth ' +token})
-
-
-
-
-       # response = requests.put('https://webdav.yandex.ru/filename.conf',
-        #                        data=mydata,
-       #                         headers={'Content-Type': 'application/binary', 'Authorization': 'OAuth ' +token, 'Content-Length':str(os.path.getsize(filepath)),
-        #                                 'Sha256': hex_dig,})
+            response2 = requests.put(href,
+                                    data=fh,
+                                    headers={'Authorization': 'OAuth ' +token})
+    return HttpResponseRedirect('/search/'+request.session.get('user', '')+'/'+keyword+'/')
 
 
-    return HttpResponse(token + "++++++++++++" +response.text + "++++++++++++" + hex_dig+ "++++++++++++++++++++++"+response2.text)
+def download_photos_from_aws(user, keyword):
+    """
+    The function that downloads pictures from aws.
 
-
-
-
-def download_photos(user):
-    import boto
-    from django.conf import settings
-    import os
-    print("downloading")
+    This function checks all keys in specified bucket and if one has /user_id/keyword as it's prefix, the function
+    downloads it.
+    :param user: user's id in format: '[user_id]'.
+    :type: string.
+    :param keyword: search phrase user is looking for.
+    :type string.
+    """
     conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
     bucket_name = settings.AWS_STORAGE_BUCKET_NAME
     bucket = conn.get_bucket(bucket_name)
-    path = ""
+
+    path = settings.PIC_DIR + user + "/" + keyword + '/'
+    os.makedirs(path, exist_ok=True)
+    for file in os.listdir(path):
+        file_path = os.path.join(path, file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            logger.error(e)
+
     for key in bucket.list():
-        print(key)
-        if user == key.name.split("/")[0] and key.name.split("/")[1]!="":
-             path = settings.PIC_DIR + user + "/"
-             print(user,path)
-             os.makedirs(path, exist_ok=True)
-             key.get_contents_to_filename( path + (key.name.split("/")[1]))
-  #  to_zip (path, user)
+        logger.debug(key)
+        prefix = key.name.split("/")
+        if user == prefix[0] and keyword == prefix[1] and key.name.split("/")[2]!="":
+             logger.debug("OK")
+             key.get_contents_to_filename( path + (key.name.split("/")[2]))
 
 
-# def to_zip(src, dst):
-#     zf = zipfile.ZipFile(settings.PIC_DIR+ dst+'.zip', 'w', zipfile.ZIP_DEFLATED)
-#     abs_src = os.path.abspath(src)
-#     for dirname, subdirs, files in os.walk(src):
-#         for filename in files:
-#             absname = os.path.abspath(os.path.join(dirname, filename))
-#             arcname = absname[len(abs_src) + 1:]
-#             print('zipping %s as %s' % (os.path.join(dirname, filename),
-#                                   arcname))
-#             zf.write(absname, arcname)
-#     zf.close()
+def send_zip_file(request, id, keyword):
+    """
+    The function that sends zip file with requested pictures to user.
 
-
-
-def send_file(request):
-    if not request.user.is_authenticated():
-        user = "[-1]"
-    else:
-        user = '['+str(request.user.pk)+']'
-
-    download_photos(user)
-    path = settings.PIC_DIR+user+'/'
-
+    This function gets all files in path specified as ../user_id/searched_phrase/ compresses them one by one to
+    zip file and sends it to user.
+    :param request:
+    :return:
+    """
+    # if request.user.is_authenticated():
+    #     user = "[{}]".format(request.user.pk)
+    # else:
+    #     user = "[-1]"
+    # keyword = request.get('keyword', '')
+    user = "[{}]".format(id)
+    download_photos_from_aws(user, keyword)
+    path = settings.PIC_DIR+user+'/' + keyword + '/'
     filenames = os.listdir(path)
-    zip_subdir = "files"
-    zip_filename = "%s.zip" % zip_subdir
 
     s = BytesIO()
     zf = zipfile.ZipFile(s, "w")
-
     for fpath in filenames:
-        zip_path = os.path.join(zip_subdir, fpath)
-        zf.write(path+fpath, zip_path)
+        zf.write(path+fpath, fpath)
     zf.close()
-
-
+    zip_filename = 'files'
     resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
-
     return resp
-
-
-# def send_file(request):
-#   import os, tempfile, zipfile
-#   from wsgiref.util import FileWrapper
-#   from django.conf import settings
-#   import mimetypes
-#
-#   filename     = settings.PIC_DIR+'None.zip' # Select your file here.
-#   download_name ="example.zip"
-#   wrapper      = FileWrapper(open(filename))
-#   content_type = mimetypes.guess_type(filename)[0]
-#   response     = HttpResponse(wrapper,content_type=content_type)
-#   response['Content-Length']      = os.path.getsize(filename)
-#   response['Content-Disposition'] = "attachment; filename=%s"%download_name
-#   return response
-
-
