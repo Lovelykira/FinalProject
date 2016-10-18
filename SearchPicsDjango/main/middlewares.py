@@ -8,8 +8,9 @@ def add_uuid_to_sessions_middleware(get_response):
         # Code to be executed for each request before
         # the view (and later middleware) are called.
 
-        # make a random UUID
-        request.session['uuid'] = str(uuid.uuid4())
+        if 'uuid' not in request.session.keys():
+            # make a random UUID
+            request.session['uuid'] = str(uuid.uuid4())
 
         response = get_response(request)
 

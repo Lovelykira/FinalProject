@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from django.utils import timezone
 
 import re
 import json
@@ -61,6 +62,17 @@ def normalize_value(value):
     return res.strip()
 
 
+def get_user_info(user):
+    res = {}
+    if user.is_authenticated():
+        res['user'] = user
+        res['user_id'] = user.pk
+    else:
+        res['user'] = None
+        res['user_id'] = -1
+    return res
+
+
 class SearchView(TemplateView):
     """
     Class SearchView.
@@ -79,7 +91,29 @@ class SearchView(TemplateView):
             tasks = Tasks.objects.filter(keyword=kwargs['keyword'], user=None)
         pics = Results.objects.filter(task__in=tasks)
         pics = sorted(pics, key=byRank)
-        return render(request, 'search.html', {'pics':pics, 'keyword':kwargs['keyword']})
+        user = get_user_info(request.user)['user']
+        try:
+            ut = UserToken.objects.get(user=user, uuid=request.session.get('uuid', ''))
+            r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
+                                 headers={'Authorization': 'OAuth ' + ut.token, 'depth': '1'})
+            xmldoc = minidom.parseString(r.text)
+            itemlist = xmldoc.getElementsByTagName('d:displayname')
+            yandex_filenames = []
+            #for child in itemlist:
+               # yandex_filenames.append(str(child.firstChild.nodeValue))
+              # yandex_filenames.append(child.)
+            import xmltodict, json
+            o = xmltodict.parse(r.text)
+            # json.dumps(o)  # '{"e": {"a": ["text", "text"]}}'
+            js = o["d:multistatus"]["d:response"]
+            yandex_folders = []
+            for href in js:
+                if href['d:href'][-1] =='/':
+                    yandex_folders.append(href['d:href'])
+        except:
+            yandex_folders = []
+
+        return render(request, 'search.html', {'pics':pics, 'keyword':kwargs['keyword'], 'yandex_folders':yandex_folders, 'dropdown':request.GET.get('dropdown','false')})
 
 
 class MainView(TemplateView):
@@ -160,12 +194,14 @@ class MainView(TemplateView):
         The function creates a new Task or gets an existing one for current user, his search phrase and the reserched site.
         If the Task is created or older than one day, the spiders_search method is called.
         """
-        if request.user.is_authenticated():
-            user = request.user
-            user_pk = request.user.pk
-        else:
-            user = None
-            user_pk = -1
+        user = get_user_info(request.user)['user']
+        user_pk = get_user_info(request.user)['user_id']
+        # if request.user.is_authenticated():
+        #     user = request.user
+        #     user_pk = request.user.pk
+        # else:
+        #     user = None
+        #     user_pk = -1
         value = normalize_value(request.POST.get('search', ""))
         if value == "":
             return HttpResponseRedirect("/")
@@ -203,10 +239,11 @@ class MainView(TemplateView):
 
         The functions gets all 'finished' tasks and transfer them into context.
         """
-        if request.user.is_authenticated():
-            user = request.user
-        else:
-            user = None
+        user = get_user_info(request.user)['user']
+        # if request.user.is_authenticated():
+        #     user = request.user
+        # else:
+        #     user = None
         finished_tasks = self.get_finished_tasks(user)
 
         return render(request, 'index.html', {'tasks':finished_tasks})
@@ -249,16 +286,20 @@ class Authorize(View):
         :return: HttpResponseRedirect to oauth.yandex with parameters response_type='code', client_id=registered app client id
         and force_confirm='yes'.
         """
-        if request.user.is_authenticated():
-            user = request.user
-        else:
-            user = None
+        user = get_user_info(request.user)['user']
+        # if request.user.is_authenticated():
+        #     user = request.user
+        # else:
+        #     user = None
+        keyword = request.GET.get('keyword', '')
+        folder = request.GET.get('folder', '')
         try:
-            ut = UserToken.objects.get(user=user, uuid=request.sessions.get('uuid', ''))
-            if ut.expire_time >= datetime.now():
-                return HttpResponseRedirect('/upload_to_yandex_drive/' + '?keyword=' + request.GET.get('keyword', ''))
-        except: #finally
-            return HttpResponseRedirect('https://oauth.yandex.ru/authorize?response_type=code&client_id={}&force_confirm=yes&state={}'.format(settings.YANDEX_APP_CLIENT_ID, request.GET.get('keyword', '')))
+            ut = UserToken.objects.get(user=user, uuid=request.session.get('uuid', ''))
+            if ut.expire_time >= timezone.now():
+                return HttpResponseRedirect('/upload_to_yandex_drive/?keyword={}&folder={}'.format(keyword,folder))
+        except:
+            state ={'keyword':keyword, 'folder':folder}
+            return HttpResponseRedirect('https://oauth.yandex.ru/authorize?response_type=code&client_id={}&force_confirm=yes&state={}'.format(settings.YANDEX_APP_CLIENT_ID, json.dumps(state)))
 
 
 class Verification(View):
@@ -273,20 +314,32 @@ class Verification(View):
         :return: HttpResponseRedirect to /upload_to_yandex_drive/ if everything went ok and
                 HttpResponseRedirect to /authorize/ if access token wasn't sent for some reason.
         """
-        keyword = request.GET.get('state', '')
+        state = json.loads(request.GET.get('state', {'keyword':'', 'folder':''}))
+        keyword = state['keyword']
+        folder = state['folder']
+
         r = requests.post('https://oauth.yandex.ru/token', data={'grant_type':'authorization_code','code':str(request.GET.get('code', '')),
                                                                  'client_id':settings.YANDEX_APP_CLIENT_ID, 'client_secret':settings.YANDEX_APP_CLIENT_PASS})
 
-        if request.user.is_authenticated():
-            user = request.user
-        else:
-            user = None
+        user = get_user_info(request.user)['user']
+        user_id = get_user_info(request.user)['user_id']
 
         if 'access_token' in r.json().keys() and 'expires_in' in r.json().keys():
             access_token = r.json()['access_token']
-            UserToken.objects.create(user=user, uuid=request.session.get('uuid', ''), token=access_token, expire_time=datetime.now()+timedelta(seconds=r.json()['expires_in']))
+            expire_time = datetime.now()+timedelta(seconds=r.json()['expires_in'])
+            try:
+                ut = UserToken.objects.get(user=user, uuid=request.session.get('uuid', ''), token=access_token)
+                ut.expire_time = expire_time
+                ut.save()
+            except:
+                UserToken.objects.create(user=user, uuid=request.session.get('uuid', ''), token=access_token, expire_time=expire_time)
+            if folder == '':
+                if user_id == -1:
+                    user_id = 'anonymous'
+                return HttpResponseRedirect("/search/{}/{}/?dropdown=open".format(user_id, keyword))
+            else:
+                return HttpResponseRedirect('/upload_to_yandex_drive/?keyword={}&folder={}'.format(keyword,folder))
 
-            return HttpResponseRedirect('/upload_to_yandex_drive/' + '?keyword=' + keyword)
         else:
             return HttpResponseRedirect('/authorize/')
 
@@ -302,18 +355,12 @@ def upload_to_YandexDrive(request):
     :return: HttpResponseRedirect to previous page - /search/user_id/keyword/
     """
 
-
-    if request.user.is_authenticated():
-        user = "[{}]".format(request.user.pk)
-        user_pk = request.user
-    else:
-        user = "[-1]"
-        user_pk = None
-    keyword = request.GET.get('keyword', '')
-    download_photos_from_aws(user, keyword)
-
-    ut = UserToken.objects.get(user=user_pk, uuid=request.session.get('uuid', ''))
+    user = get_user_info(request.user)['user']
+    ut = UserToken.objects.get(user=user, uuid=request.session.get('uuid', ''))
     token = ut.token
+
+    user = "[{}]".format(get_user_info(request.user)['user_id'])
+    keyword = request.GET.get('keyword', '')
 
     r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
                          headers={'Authorization': 'OAuth ' + token, 'depth':'1'})
@@ -323,21 +370,24 @@ def upload_to_YandexDrive(request):
     for child in itemlist:
         yandex_filenames.append(str(child.firstChild.nodeValue))
 
+    conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
+    bucket_name = settings.AWS_STORAGE_BUCKET_NAME
+    bucket = conn.get_bucket(bucket_name)
 
-    path = settings.PIC_DIR + user + "/" + keyword + '/'
-    filenames = os.listdir(path)
-    filenames = [path+filename for filename in filenames]
-
-    for filepath in filenames:
-        with open(filepath, 'rb') as fh:
-            filepath = normalize_value(filepath)
-            i=1
+    for key in bucket.list():
+        logger.debug(key)
+        prefix = key.name.split("/")
+        if user == prefix[0] and keyword == prefix[1] and key.name.split("/")[2]!="":
+            filepath = normalize_value(key.name.split("/")[2])
+            i = 1
             while True:
                 if filepath in yandex_filenames:
                     filepath = "{} ({})".format(filepath, i)
                 else:
                     break
-            response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path='+filepath, headers={'Authorization': 'OAuth ' +token})
+            response = requests.get(
+                'https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path={}{}'.format(request.GET.get('folder', '/'),filepath),
+                headers={'Authorization': 'OAuth ' + token})
 
             if 'href' in response.json():
                 href = response.json()['href']
@@ -345,9 +395,14 @@ def upload_to_YandexDrive(request):
                 continue
 
             response2 = requests.put(href,
-                                    data=fh,
-                                    headers={'Authorization': 'OAuth ' +token})
-    return HttpResponseRedirect('/search/'+request.session.get('user', '')+'/'+keyword+'/')
+                                     data=key.get_contents_as_string(),
+                                     headers={'Authorization': 'OAuth ' + token})
+
+    if request.user.is_authenticated():
+        user = request.user.pk
+    else:
+        user = "anonymous"
+    return HttpResponseRedirect('/search/'+str(user)+'/'+str(keyword)+'/')
 
 
 def download_photos_from_aws(user, keyword):
@@ -392,22 +447,26 @@ def send_zip_file(request, id, keyword):
     :param request:
     :return:
     """
-    # if request.user.is_authenticated():
-    #     user = "[{}]".format(request.user.pk)
-    # else:
-    #     user = "[-1]"
-    # keyword = request.get('keyword', '')
-    user = "[{}]".format(id)
-    download_photos_from_aws(user, keyword)
-    path = settings.PIC_DIR+user+'/' + keyword + '/'
-    filenames = os.listdir(path)
+    if id!="anonymous":
+        user = "[{}]".format(id)
+    else:
+        user = "[-1]"
 
+    conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
+    bucket_name = settings.AWS_STORAGE_BUCKET_NAME
+    bucket = conn.get_bucket(bucket_name)
     s = BytesIO()
     zf = zipfile.ZipFile(s, "w")
-    for fpath in filenames:
-        zf.write(path+fpath, fpath)
+
+    for key in bucket.list():
+        logger.debug(key)
+        prefix = key.name.split("/")
+        if user == prefix[0] and keyword == prefix[1] and key.name.split("/")[2]!="":
+            logger.debug("OK")
+            zf.writestr(key.name.split("/")[2], key.get_contents_as_string())
+
     zf.close()
-    zip_filename = 'files'
+    zip_filename = 'files2.zip'
     resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
     return resp
