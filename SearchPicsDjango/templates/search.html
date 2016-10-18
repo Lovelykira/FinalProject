@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
 {% block main %}
     <div class="container">
+        <input type="hidden" id="keyword" value="{{keyword}}" >
+        {%if user.is_authenticated%}
+            <input type="hidden" class="user_id" value="{{user.id}}" >
+        {%else%}
+            <input type="hidden" class="user_id" value="anonymous">
+        {%endif%}
 
         <div class="row">
             <div class="col-md-12 main">
-                <!--<div class="row"><a     href="/authorize/?keyword={{keyword}}">Upload to Yandex Disk</a></div>-->
-                <div class=" row dropdown {{dropdown}}">
+                <div class="row">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="row dropdown {{dropdown}}" id="dropdown_row">
                     {% if yandex_folders%}
                         <a href="#" class="dropdown-toggle"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Upload to Yandex Disk</a>
                     {% else %}
@@ -14,8 +28,9 @@
                     <ul class="dropdown-menu" style=" left: 43%;">
                         <li class="dropdown-header">Choose folder</li>
                         {% for folder in yandex_folders %}
-                            <li><a href="/authorize/?keyword={{keyword}}&folder={{folder}}">{{folder}}</a></li>
+                            <li><a href="/authorize/?keyword={{keyword}}&folder={{folder}}" class="yandex_folder">{{folder}}</a></li>
                         {% endfor %}
+                        <li><input type="text" name="input_folder" id="input_folder"></li>
                     </ul>
 
                 </div>

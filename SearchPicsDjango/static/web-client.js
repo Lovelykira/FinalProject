@@ -99,6 +99,43 @@
         if(e.keyCode == 13){
             post(e);
         }
-    })
+    });
+
+    var keyword = $("#keyword").val();
+    var user_id = $(".user_id").val();
+
+    function normalize_folder_path(input_folder){
+        if (input_folder[0] != '/')
+            input_folder = '/' + input_folder;
+        if (input_folder.slice(-1) != '/')
+            input_folder = input_folder + '/';
+        return input_folder
+    }
+
+    function add_message(input_folder){
+        $( "dropdown_row" ).removeClass( "down" );
+        var MessageRow = $("<div />", {class:"row"}).prependTo(".main");
+        var Message = $("<div />", {class: "alert alert-success", role:"alert", text:"Uploading to "+input_folder+"..."}).appendTo(MessageRow);
+    }
+
+    $("#input_folder").keydown(function(event){
+        var input_folder = $("#input_folder").val();
+        input_folder = normalize_folder_path(input_folder);
+        if(event.keyCode == 13){
+            $.ajax({type: "GET",
+                    url: "/authorize/?keyword="+keyword+"&folder="+input_folder,
+                    success: function(data, textStatus) {
+                        window.location.href = '/search/'+user_id+'/'+keyword+'/';}
+                        });
+            add_message(input_folder);
+        }});
+
+
+    $(".yandex_folder").click(function() {
+        var input_folder = $(this).text();
+        add_message(normalize_folder_path(input_folder));
+    });
+
+
 
  };

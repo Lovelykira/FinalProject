@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, View, FormView
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse,JsonResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.utils import timezone
+from django.conf import settings
 
 import re
 import json
@@ -15,8 +17,8 @@ import requests
 import boto
 import zipfile
 import os
+import xmltodict
 
-from django.conf import settings
 from io import StringIO, BytesIO
 from datetime import datetime, timedelta
 from xml.dom import minidom
@@ -27,6 +29,10 @@ from .forms import LoginForm, RegistrationForm
 SPIDERS = ['google', 'yandex', 'instagram']
 START_STATUS = "IN_PROGRESS"
 FINISHED = "FINISHED"
+YANDEX_API_URL = 'https://cloud-api.yandex.net/v1/disk/resources/'
+YANDEX_DISK_URL = 'https://disk.yandex.ua/client/disk'
+YANDEX_OAUTH_URL = 'https://oauth.yandex.ru/'
+YANDEX_WEBDAV_URL = 'http://webdav.yandex.ru'
 
 logger = logging.getLogger(__name__)
 
@@ -97,14 +103,8 @@ class SearchView(TemplateView):
             r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
                                  headers={'Authorization': 'OAuth ' + ut.token, 'depth': '1'})
             xmldoc = minidom.parseString(r.text)
-            itemlist = xmldoc.getElementsByTagName('d:displayname')
-            yandex_filenames = []
-            #for child in itemlist:
-               # yandex_filenames.append(str(child.firstChild.nodeValue))
-              # yandex_filenames.append(child.)
-            import xmltodict, json
+
             o = xmltodict.parse(r.text)
-            # json.dumps(o)  # '{"e": {"a": ["text", "text"]}}'
             js = o["d:multistatus"]["d:response"]
             yandex_folders = []
             for href in js:
@@ -196,12 +196,6 @@ class MainView(TemplateView):
         """
         user = get_user_info(request.user)['user']
         user_pk = get_user_info(request.user)['user_id']
-        # if request.user.is_authenticated():
-        #     user = request.user
-        #     user_pk = request.user.pk
-        # else:
-        #     user = None
-        #     user_pk = -1
         value = normalize_value(request.POST.get('search', ""))
         if value == "":
             return HttpResponseRedirect("/")
@@ -240,10 +234,6 @@ class MainView(TemplateView):
         The functions gets all 'finished' tasks and transfer them into context.
         """
         user = get_user_info(request.user)['user']
-        # if request.user.is_authenticated():
-        #     user = request.user
-        # else:
-        #     user = None
         finished_tasks = self.get_finished_tasks(user)
 
         return render(request, 'index.html', {'tasks':finished_tasks})
@@ -287,10 +277,6 @@ class Authorize(View):
         and force_confirm='yes'.
         """
         user = get_user_info(request.user)['user']
-        # if request.user.is_authenticated():
-        #     user = request.user
-        # else:
-        #     user = None
         keyword = request.GET.get('keyword', '')
         folder = request.GET.get('folder', '')
         try:
@@ -299,7 +285,7 @@ class Authorize(View):
                 return HttpResponseRedirect('/upload_to_yandex_drive/?keyword={}&folder={}'.format(keyword,folder))
         except:
             state ={'keyword':keyword, 'folder':folder}
-            return HttpResponseRedirect('https://oauth.yandex.ru/authorize?response_type=code&client_id={}&force_confirm=yes&state={}'.format(settings.YANDEX_APP_CLIENT_ID, json.dumps(state)))
+            return HttpResponseRedirect('{}authorize?response_type=code&client_id={}&force_confirm=yes&state={}'.format(YANDEX_OAUTH_URL,settings.YANDEX_APP_CLIENT_ID, json.dumps(state)))
 
 
 class Verification(View):
@@ -318,7 +304,7 @@ class Verification(View):
         keyword = state['keyword']
         folder = state['folder']
 
-        r = requests.post('https://oauth.yandex.ru/token', data={'grant_type':'authorization_code','code':str(request.GET.get('code', '')),
+        r = requests.post('{}token'.format(YANDEX_OAUTH_URL), data={'grant_type':'authorization_code','code':str(request.GET.get('code', '')),
                                                                  'client_id':settings.YANDEX_APP_CLIENT_ID, 'client_secret':settings.YANDEX_APP_CLIENT_PASS})
 
         user = get_user_info(request.user)['user']
@@ -361,14 +347,38 @@ def upload_to_YandexDrive(request):
 
     user = "[{}]".format(get_user_info(request.user)['user_id'])
     keyword = request.GET.get('keyword', '')
-
-    r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
-                         headers={'Authorization': 'OAuth ' + token, 'depth':'1'})
-    xmldoc = minidom.parseString(r.text)
-    itemlist = xmldoc.getElementsByTagName('d:displayname')
+    folder = request.GET.get('folder', '/')
+    r = requests.get('https://cloud-api.yandex.net/v1/disk/resources?path=/', headers={'Authorization': 'OAuth ' + token})
+    js = json.loads(r.content.decode('utf8'))
+    itemlist = js['_embedded']['items']
+ #    r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
+ #                         headers={'Authorization': 'OAuth ' + token, 'depth': '1'})
+    #xmldoc = minidom.parseString(r.text)
+    #itemlist = xmldoc.getElementsByTagName('d:displayname')
     yandex_filenames = []
     for child in itemlist:
-        yandex_filenames.append(str(child.firstChild.nodeValue))
+        path = child["path"].replace('disk:','')
+        if child['type'] == 'dir':
+            path += '/'
+            
+        yandex_filenames.append(path)
+
+        #yandex_filenames.append(str(child.firstChild.nodeValue))
+
+
+    if folder not in yandex_filenames and folder != '/':
+        folder_path_arr = folder.split('/')[1:-1]
+        cur_folder_path = folder_path_arr.pop(0)
+        while True:
+            if cur_folder_path not in yandex_filenames:
+                r = requests.request('PUT', 'https://cloud-api.yandex.net/v1/disk/resources/?path={}'.format(cur_folder_path),
+                                     headers={'Authorization': 'OAuth ' + token, 'depth': '1'})
+                if folder_path_arr!=[]:
+                    cur_folder_path += '/' + folder_path_arr.pop(0)  + '/'
+                else:
+                    break
+            else:
+                break
 
     conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
     bucket_name = settings.AWS_STORAGE_BUCKET_NAME
@@ -385,13 +395,16 @@ def upload_to_YandexDrive(request):
                     filepath = "{} ({})".format(filepath, i)
                 else:
                     break
-            response = requests.get(
-                'https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path={}{}'.format(request.GET.get('folder', '/'),filepath),
+            response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path={}{}'.format(request.GET.get('folder', '/'),filepath),
                 headers={'Authorization': 'OAuth ' + token})
+
+   #             '{}upload?url={}&path={}{}'.format(YANDEX_API_URL, YANDEX_DISK_URL, folder, filepath),
+    #            headers={'Authorization': 'OAuth ' + token})
 
             if 'href' in response.json():
                 href = response.json()['href']
             else:
+                messages.add_message(request, messages.ERROR, str(response.json()))
                 continue
 
             response2 = requests.put(href,
@@ -402,6 +415,9 @@ def upload_to_YandexDrive(request):
         user = request.user.pk
     else:
         user = "anonymous"
+    messages.add_message(request, messages.INFO, 'Upload to {} successfully finished'.format(folder))
+    if request.is_ajax():
+        pass
     return HttpResponseRedirect('/search/'+str(user)+'/'+str(keyword)+'/')
 
 
