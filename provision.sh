@@ -94,3 +94,4 @@ cp -f /vagrant/FinalProject/supervisord.conf /etc/supervisor/conf.d/supervisord.
 sudo supervisord
 sudo supervisorctl reload
 sudo service nginx restart
+cd FinalProject/
