@@ -5,12 +5,18 @@
 }
 
 .pic-container{
-    float:right;
-    display:inline-block;
+    float:left;
     width:210px;
     height:160px;
-    border: 1px solid black;
+    border: 0.5px solid #B6B6B6;
     text-align: center;
+    background:#f8f8f8;
+    opacity: 0.7;
+}
+
+.pic-container:hover{
+    opacity: 1.0;
+    background:none;
 }
 
 .helper {
@@ -27,7 +33,6 @@ img {
 
 .search, .btn{
     padding: 15px;
-    #border: 1px groove;
     display: inline-block;
     height:100%;
 }
@@ -37,8 +42,9 @@ img {
 }
 
 .btn{
-    background-color:#4CAF50;
-    border:none;
+    background-color:#717FDB;
+    margin: 0 5px;
+    /*border:none;*/
 
 }
 
@@ -52,4 +58,11 @@ img {
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.results_buttons{
+    margin: 0 0 30px 30px;
+    padding: 5px;
+
+
 }

@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
+
+        {%block right_header%}
+            <a href="/" class="btn btn-primary btn-sm"> <&#45;&#45;BACK</a>
+        {%endblock %}
 {% block main %}
+
+
     <div class="container">
         <input type="hidden" id="keyword" value="{{keyword}}" >
         {%if user.is_authenticated%}
@@ -19,32 +25,41 @@
                         {% endfor %}
                     {% endif %}
                 </div>
-                <div class="row dropdown {{dropdown}}" id="dropdown_row">
-                    {% if yandex_folders%}
-                        <a href="#" class="dropdown-toggle"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Upload to Yandex Disk</a>
-                    {% else %}
-                        <a href="/authorize/?keyword={{keyword}}" >Authorize to Yandex Disk</a>
-                    {% endif %}
-                    <ul class="dropdown-menu" style=" left: 43%;">
-                        <li class="dropdown-header">Choose folder</li>
-                        {% for folder in yandex_folders %}
-                            <li><a href="/authorize/?keyword={{keyword}}&folder={{folder}}" class="yandex_folder">{{folder}}</a></li>
-                        {% endfor %}
-                        <li><input type="text" name="input_folder" id="input_folder"></li>
-                    </ul>
+                <div class="row">
+                    <!--<div class="col-md-3">-->
+                        <!--<a href="/" class="btn btn-primary btn-sm"> <&#45;&#45;BACK</a>-->
+                    <!--</div>-->
+                    <div class="col-md-12">
+                        <div class="row" >
+                            <div class="dropdown {{dropdown}}" id="dropdown_row">
+                                {% if yandex_folders%}
+                                    <a href="#" class="dropdown-toggle btn btn-primary results_buttons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                        <i class="glyphicon glyphicon glyphicon-cloud-upload"></i> Upload to Yandex Disk</a>
+                                {% else %}
+                                    <a href="/authorize/?keyword={{keyword}}" class="btn btn-primary results_buttons" >
+                                        <i class="glyphicon glyphicon glyphicon-cloud"></i> Authorize to Yandex Disk</a>
+                                {% endif %}
+                                <ul class="dropdown-menu" style=" left: 43%;">
+                                    <li class="dropdown-header">Choose folder</li>
+                                    {% for folder in yandex_folders %}
+                                        <li><a href="/authorize/?keyword={{keyword}}&folder={{folder}}" class="yandex_folder">{{folder}}</a></li>
+                                    {% endfor %}
+                                    <li><input type="text" name="input_folder" id="input_folder"></li>
+                                </ul>
+                            </div>
 
+                            {% if user.is_authenticated %}
+                                <a href="/download/{{user.id}}/{{keyword}}/" class="btn btn-primary results_buttons">
+                                    <i class="glyphicon glyphicon-download-alt"></i> Download Zip File</a>
+                            {% else %}
+                                <a href="/download/anonymous/{{keyword}}/" class="btn btn-primary results_buttons">
+                                    <i class="glyphicon glyphicon-download-alt"></i> Download Zip File</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
 
 
-                <div class="row">
-                    {% if user.is_authenticated %}
-                        <a href="/download/{{user.id}}/{{keyword}}/">Download Zip File</a>
-                    {% else %}
-                        <a href="/download/anonymous/{{keyword}}/">Download Zip File</a>
-                    {% endif %}
-                </div>
-                <div class="row">
-                    <a href="/" class="btn btn-primary btn-sm"> <--BACK</a></div>
                 <div class="row">
                     <div class="col-md-12 all-pics">
                         {% if pics|length > 0 %}

@@ -97,6 +97,7 @@ class SearchView(TemplateView):
             tasks = Tasks.objects.filter(keyword=kwargs['keyword'], user=None)
         pics = Results.objects.filter(task__in=tasks)
         pics = sorted(pics, key=byRank)
+
         user = get_user_info(request.user)['user']
         try:
             ut = UserToken.objects.get(user=user, uuid=request.session.get('uuid', ''))
@@ -330,6 +331,24 @@ class Verification(View):
             return HttpResponseRedirect('/authorize/')
 
 
+def get_yandex_filenames(dir, token):
+    r = requests.get(YANDEX_API_URL + '?path='+ dir, headers={'Authorization': 'OAuth ' + token})
+    js = json.loads(r.content.decode('utf8'))
+    if '_embedded' in js.keys() and 'items' in js['_embedded'].keys():
+        itemlist = js['_embedded']['items']
+        yandex_filenames = []
+        for child in itemlist:
+            path = child["path"].replace('disk:', '')
+            if child['type'] == 'dir':
+                path += '/'
+                yandex_filenames.extend(get_yandex_filenames(path, token))
+            yandex_filenames.append(path)
+    else:
+        yandex_filenames = []
+
+    return yandex_filenames
+
+
 def upload_to_YandexDrive(request):
     """
     This function uploads pictures to YandexDrive.
@@ -348,20 +367,23 @@ def upload_to_YandexDrive(request):
     user = "[{}]".format(get_user_info(request.user)['user_id'])
     keyword = request.GET.get('keyword', '')
     folder = request.GET.get('folder', '/')
-    r = requests.get('https://cloud-api.yandex.net/v1/disk/resources?path=/', headers={'Authorization': 'OAuth ' + token})
-    js = json.loads(r.content.decode('utf8'))
-    itemlist = js['_embedded']['items']
- #    r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
- #                         headers={'Authorization': 'OAuth ' + token, 'depth': '1'})
-    #xmldoc = minidom.parseString(r.text)
-    #itemlist = xmldoc.getElementsByTagName('d:displayname')
-    yandex_filenames = []
-    for child in itemlist:
-        path = child["path"].replace('disk:','')
-        if child['type'] == 'dir':
-            path += '/'
-            
-        yandex_filenames.append(path)
+
+    yandex_filenames = get_yandex_filenames('/', token)
+ #   return HttpResponse(str(yandex_filenames))
+ #    r = requests.get(YANDEX_API_URL+'?path=/', headers={'Authorization': 'OAuth ' + token})
+ #    js = json.loads(r.content.decode('utf8'))
+ #    itemlist = js['_embedded']['items']
+ # #    r = requests.request('PROPFIND', 'http://webdav.yandex.ru',
+ # #                         headers={'Authorization': 'OAuth ' + token, 'depth': '1'})
+ #    #xmldoc = minidom.parseString(r.text)
+ #    #itemlist = xmldoc.getElementsByTagName('d:displayname')
+ #    yandex_filenames = []
+ #    for child in itemlist:
+ #        path = child["path"].replace('disk:','')
+ #        if child['type'] == 'dir':
+ #            path += '/'
+ #
+ #        yandex_filenames.append(path)
 
         #yandex_filenames.append(str(child.firstChild.nodeValue))
 
@@ -371,7 +393,7 @@ def upload_to_YandexDrive(request):
         cur_folder_path = folder_path_arr.pop(0)
         while True:
             if cur_folder_path not in yandex_filenames:
-                r = requests.request('PUT', 'https://cloud-api.yandex.net/v1/disk/resources/?path={}'.format(cur_folder_path),
+                r = requests.request('PUT', '{}?path={}'.format(YANDEX_API_URL,cur_folder_path),
                                      headers={'Authorization': 'OAuth ' + token, 'depth': '1'})
                 if folder_path_arr!=[]:
                     cur_folder_path += '/' + folder_path_arr.pop(0)  + '/'
@@ -391,11 +413,12 @@ def upload_to_YandexDrive(request):
             filepath = normalize_value(key.name.split("/")[2])
             i = 1
             while True:
-                if filepath in yandex_filenames:
+                if folder+filepath in yandex_filenames:
                     filepath = "{} ({})".format(filepath, i)
+
                 else:
                     break
-            response = requests.get('https://cloud-api.yandex.net/v1/disk/resources/upload?url=https://disk.yandex.ua/client/disk&path={}{}'.format(request.GET.get('folder', '/'),filepath),
+            response = requests.get('{}upload?url=https://disk.yandex.ua/client/disk&path={}{}'.format(YANDEX_API_URL, request.GET.get('folder', '/'),filepath),
                 headers={'Authorization': 'OAuth ' + token})
 
    #             '{}upload?url={}&path={}{}'.format(YANDEX_API_URL, YANDEX_DISK_URL, folder, filepath),

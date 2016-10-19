@@ -18,6 +18,10 @@
     {% block head %}
     <nav class="navbar navbar-default header">
         <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+                {% block right_header %}
+                {% endblock %}
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if not user.is_authenticated %}
                 <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
