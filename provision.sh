@@ -79,7 +79,7 @@ YANDEX_APP_CLIENT_PASS = 'cb7fe3ba115f45ccbe35e391fc0d187d'
 
 PIC_DIR = '/vagrant/user/Projects/'
 
-"ws://127.0.0.1:8003/ws?user_id="
+SOCKET_ADDRESS="ws://127.0.0.1:8003/ws?user_id="
 }
 EOF
 python manage.py migrate
