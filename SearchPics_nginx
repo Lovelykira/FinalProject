@@ -1,0 +1,31 @@
+upstream django {
+    server unix:///tmp/searchpicsdjango.sock;
+    # server 127.0.0.1:8001;
+}
+
+server {
+    listen 80;
+    server_name 127.0.0.1;
+    #server_name www.SearchPicsDjango.com SearchPicsDjango.com;
+
+    access_log /vagrant/log/nginx.access.log;
+    error_log /vagrant/log/nginx.error.log;
+
+    location /static {
+        alias /vagrant/FinalProject/static/;
+    }
+
+    location / {
+        include /vagrant/uwsgi_params;
+        uwsgi_pass django;
+        #uwsgi_pass 127.0.0.1:8000;
+    }
+
+   location /ws {
+        proxy_pass http://127.0.0.1:9000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 950s;
+    }
+}
