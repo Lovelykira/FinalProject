@@ -70,7 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'main.middlewares.add_uuid_to_sessions_middleware'
+    'main.middlewares.add_uuid_to_sessions_middleware',
 ]
 
 ROOT_URLCONF = 'SearchPicsDjango.urls'
@@ -86,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.views.context_processor_settings',
             ],
         },
     },
@@ -176,6 +177,8 @@ if DEBUG:
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+SOCKET_ADDRESS = "ws://127.0.0.1:9000?user_id="
 
 try:
     from .local_settings import *

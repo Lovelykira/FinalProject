@@ -509,3 +509,6 @@ def send_zip_file(request, id, keyword):
     resp = HttpResponse(s.getvalue(), content_type="application/x-zip-compressed")
     resp['Content-Disposition'] = 'attachment; filename=%s' % zip_filename
     return resp
+
+def context_processor_settings(reguest):
+    return {'SOCKET': settings.SOCKET_ADDRESS}

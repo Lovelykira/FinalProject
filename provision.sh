@@ -69,6 +69,17 @@ DATABASES = {
 'HOST': 'localhost', # Set to empty string for localhost.
 'PORT': '', # Set to empty string for default.
 }
+
+AWS_ACCESS_KEY_ID = 'AKIAJ4WWLDGCAXCZYUOQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'kira-bucket'
+
+YANDEX_APP_CLIENT_ID = '28b5af656ea54530aa225aeb66123129'
+YANDEX_APP_CLIENT_PASS = 'cb7fe3ba115f45ccbe35e391fc0d187d'
+
+PIC_DIR = '/vagrant/user/Projects/'
+
+"ws://127.0.0.1:8000/ws?user_id="
 }
 EOF
 python manage.py migrate
