@@ -10,7 +10,7 @@
     //url = "ws://127.0.0.1:9000?user_id="+user_id.toString();
     //for vm
     //url = "ws://" + window.location.host + "/ws?user_id="+user_id.toString();
-
+    url+=user_id.toString();
     socket = new WebSocket(url);
 
 
